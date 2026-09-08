@@ -6,9 +6,12 @@ on:
     paths:
       - "content/issues/**"
       - "data/site.json"
-      - "assets/**"
-      - "scripts/**"
-      - "requirements.txt"
+      - "src/**"
+      - "public/**"
+      - "astro.config.mjs"
+      - "package.json"
+      - "tsconfig.json"
+      - "scripts/discord.py"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -26,29 +29,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
         with:
-          python-version: "3.12"
-          cache: pip
+          node-version: "24"
 
-      - name: Install build dependencies
-        run: pip install -r requirements.txt
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
 
-      - name: Build static site
-        run: python scripts/build.py
+      - name: Build Astro site
+        run: npm run build
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
-          path: _site
+          path: dist
+          include-hidden-files: true
 
   deploy:
     runs-on: ubuntu-latest
@@ -61,7 +64,7 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
   notify-discord:
     runs-on: ubuntu-latest
@@ -73,7 +76,7 @@ jobs:
       PAGE_URL: ${{ needs.deploy.outputs.page_url }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
