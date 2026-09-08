@@ -1,0 +1,20 @@
+---
+import { pathWithBase } from '../lib/site';
+---
+<header class="site-header">
+  <div class="shell nav-shell">
+    <a class="brand" href={pathWithBase('/')} aria-label="AstroPhoto Weekly — accueil">
+      <span class="brand-mark" aria-hidden="true">✦</span>
+      <span>
+        <strong>AstroPhoto</strong>
+        <em>Weekly</em>
+      </span>
+    </a>
+    <nav aria-label="Navigation principale">
+      <a href={pathWithBase('/')}>À la une</a>
+      <a href={pathWithBase('/archives/')}>Archives</a>
+      <a href={pathWithBase('/a-propos/')}>À propos</a>
+      <a class="rss-link" href={pathWithBase('/rss.xml')}>RSS</a>
+    </nav>
+  </div>
+</header>
