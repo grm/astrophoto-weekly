@@ -1,0 +1,109 @@
+name: Publish AstroPhoto Weekly
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "content/issues/**"
+      - "data/**"
+      - "assets/**"
+      - "scripts/**"
+      - "requirements.txt"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install build dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build static site
+        run: python scripts/build.py
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  notify-discord:
+    runs-on: ubuntu-latest
+    needs: deploy
+    if: github.event_name == 'push'
+    env:
+      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+      PAGE_URL: ${{ needs.deploy.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect a newly published issue
+        id: issue
+        shell: bash
+        run: |
+          set -euo pipefail
+          BEFORE="${{ github.event.before }}"
+          AFTER="${{ github.sha }}"
+          FILES="$(git diff --diff-filter=A --name-only "$BEFORE" "$AFTER" -- 'content/issues/*.md' || true)"
+          COUNT="$(printf '%s\n' "$FILES" | sed '/^$/d' | wc -l | tr -d ' ')"
+          if [ "$COUNT" -eq 0 ]; then
+            echo "publish=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if [ "$COUNT" -ne 1 ]; then
+            echo "Expected exactly one new issue, found $COUNT" >&2
+            exit 1
+          fi
+          FILE="$(printf '%s\n' "$FILES" | head -n 1)"
+          SLUG="$(basename "$FILE" .md)"
+          if ! [[ "$SLUG" =~ ^[0-9]{3}$ ]]; then
+            echo "Invalid issue filename: $FILE" >&2
+            exit 1
+          fi
+          echo "publish=true" >> "$GITHUB_OUTPUT"
+          echo "slug=$SLUG" >> "$GITHUB_OUTPUT"
+
+      - name: Send Discord notification
+        if: steps.issue.outputs.publish == 'true'
+        env:
+          ISSUE_SLUG: ${{ steps.issue.outputs.slug }}
+        run: python scripts/discord.py
