@@ -19,7 +19,7 @@ Scheduled editorial task
         ↓
 Web research + source verification
         ↓
-French newsletter + Discord digest
+French newsletter + French Discord digest
         ↓
 Commit to this repository
         ↓
@@ -82,7 +82,9 @@ A push to `main` triggers the Pages workflow.
 
 No permanent server or database is required. The site is static and the GitHub Actions build is intentionally small. Editorial generation is expected to run from the scheduled ChatGPT task rather than from a separately billed OpenAI API job inside GitHub Actions.
 
-## Language
+## Language policy
 
-- Infrastructure and repository documentation: English.
-- Published newsletter: French for now.
+- Reader-facing newsletter content: French.
+- Discord notifications and digests: French.
+- Public archive copy and calls to action: French.
+- Code, scripts, internal identifiers, comments, commit-oriented implementation conventions, and developer documentation: English.
