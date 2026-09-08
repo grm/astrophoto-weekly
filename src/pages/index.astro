@@ -1,0 +1,59 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import IssueCard from '../components/IssueCard.astro';
+import { pathWithBase } from '../lib/site';
+
+const issues = (await getCollection('issues')).sort((a, b) => b.data.number - a.data.number);
+const latest = issues[0];
+const older = issues.slice(1, 7);
+---
+<BaseLayout>
+  <section class="hero shell">
+    <div class="eyebrow"><span></span> Newsletter astrophoto · chaque semaine</div>
+    <h1>Ce qui mérite vraiment<br /><em>votre prochaine nuit claire.</em></h1>
+    <p class="hero-copy">Actualités, matériel, logiciels, techniques, open source et idées d’imagerie — triés pour les astrophotographes, pas pour les algorithmes marketing.</p>
+    <div class="hero-actions">
+      {latest ? <a class="button primary" href={pathWithBase(`/issues/${latest.id}/`)}>Lire la dernière édition</a> : <span class="button primary muted-button">Première édition bientôt</span>}
+      <a class="button ghost" href={pathWithBase('/rss.xml')}>Suivre via RSS</a>
+    </div>
+  </section>
+
+  <section class="signal-strip">
+    <div class="shell signal-grid">
+      <div><strong>01</strong><span>Sources primaires d’abord</span></div>
+      <div><strong>02</strong><span>8–12 sujets, pas 47 liens</span></div>
+      <div><strong>03</strong><span>Bêta ≠ stable</span></div>
+      <div><strong>04</strong><span>Le tilt reste personnel</span></div>
+    </div>
+  </section>
+
+  <section class="shell section-block">
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow"><span></span> Dernière transmission</div>
+        <h2>À la une</h2>
+      </div>
+      <a href={pathWithBase('/archives/')}>Toutes les archives →</a>
+    </div>
+
+    {latest ? (
+      <IssueCard issue={latest} featured />
+    ) : (
+      <div class="empty-state">
+        <span class="empty-orbit" aria-hidden="true"></span>
+        <h3>La première édition prépare son orbite.</h3>
+        <p>La veille est active. Les communiqués marketing sont déjà en train d’être regardés d’un air soupçonneux.</p>
+      </div>
+    )}
+  </section>
+
+  {older.length > 0 && (
+    <section class="shell section-block compact-top">
+      <div class="section-heading"><h2>Éditions précédentes</h2></div>
+      <div class="issue-grid">
+        {older.map((issue) => <IssueCard issue={issue} />)}
+      </div>
+    </section>
+  )}
+</BaseLayout>
