@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import IssueCard from '../components/IssueCard.astro';
+
+const issues = (await getCollection('issues')).sort((a, b) => b.data.number - a.data.number);
+---
+<BaseLayout title="Archives" description="Toutes les éditions d’AstroPhoto Weekly.">
+  <section class="shell page-intro">
+    <div class="eyebrow"><span></span> Archives</div>
+    <h1>Toutes les nuits<br /><em>qu’on a passées à veiller.</em></h1>
+    <p>Les éditions d’AstroPhoto Weekly, dans l’ordre inverse des mises à jour que vous n’auriez peut-être pas dû installer juste avant une session.</p>
+  </section>
+  <section class="shell section-block compact-top">
+    {issues.length ? (
+      <div class="issue-grid">{issues.map((issue) => <IssueCard issue={issue} />)}</div>
+    ) : (
+      <div class="empty-state"><h2>Pas encore d’archives.</h2><p>Le #001 arrive en premier. Nous vérifions encore le backfocus de la pagination.</p></div>
+    )}
+  </section>
+</BaseLayout>
