@@ -5,7 +5,7 @@ on:
     branches: ["main"]
     paths:
       - "content/issues/**"
-      - "data/**"
+      - "data/site.json"
       - "assets/**"
       - "scripts/**"
       - "requirements.txt"
