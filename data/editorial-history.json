@@ -1,4 +1,77 @@
 {
-  "last_issue": 0,
-  "topics": {}
+  "last_issue": 1,
+  "topics": {
+    "blurxterminator-ml5": {
+      "issue": 1,
+      "date": "2026-09-08",
+      "status": "stable",
+      "version": "ML5 / RC Astro runtime 2.6.8",
+      "source": "https://www.rc-astro.com/blurxterminator-ml5/",
+      "angle": "Major deconvolution model update, compatibility, upgrade policy and practical impact"
+    },
+    "seestar-s50-pro": {
+      "issue": 1,
+      "date": "2026-09-08",
+      "status": "available",
+      "version": "S50 Pro",
+      "source": "https://www.zwoastro.com/2026/08/25/seestar-s50-pro-now-available-50mm-aperture-revealing-more-of-the-universe/4/",
+      "angle": "Recent smart-telescope hardware launch and what the specification shift means"
+    },
+    "siril-scripts-september-2026": {
+      "issue": 1,
+      "date": "2026-09-08",
+      "status": "mixed: main updates and open merge requests",
+      "version": null,
+      "source": "https://gitlab.com/free-astro/siril-scripts",
+      "angle": "Recent script-repository activity, AutoGradientRemoval update and open proposals"
+    },
+    "sharpcap-4-2-beta": {
+      "issue": 1,
+      "date": "2026-09-08",
+      "status": "beta",
+      "version": "4.2.15118.0",
+      "source": "https://www.sharpcap.co.uk/sharpcap/sharpcap-downloads/sharpcap-4-2-beta",
+      "angle": "Current beta, live-stacking improvements, observability tools and stability caveats"
+    },
+    "nina-3-3-nightly": {
+      "issue": 1,
+      "date": "2026-09-08",
+      "status": "nightly",
+      "version": "3.3 NIGHTLY",
+      "source": "https://github.com/isbeorn/nina/blob/develop/RELEASE_NOTES.md",
+      "angle": ".NET 10 migration, imaging safety and acquisition improvements; explicitly not stable"
+    },
+    "ha-redshift-ngc1566": {
+      "issue": 1,
+      "date": "2026-09-08",
+      "status": "technique",
+      "version": null,
+      "source": "https://app.astrobin.com/forum/topic/253312/filters/fourth-narrowband-filter-thoughts",
+      "angle": "Why galaxy redshift and fast-optics filter blue-shift can move H-alpha outside a narrow passband"
+    },
+    "centaurus-a-hydrogen-velocity-map": {
+      "issue": 1,
+      "date": "2026-09-08",
+      "status": "AstroBin IOTD",
+      "version": null,
+      "source": "https://app.astrobin.com/i/u6sbbz",
+      "angle": "Advanced amateur spectral-line mapping presented as an H-alpha radial-velocity image"
+    },
+    "new-moon-september-11-2026": {
+      "issue": 1,
+      "date": "2026-09-08",
+      "status": "upcoming",
+      "version": null,
+      "source": "https://www.timeanddate.com/moon/phases/%402989781",
+      "angle": "Upcoming dark-sky window"
+    },
+    "comets-10p-220p-september-2026": {
+      "issue": 1,
+      "date": "2026-09-08",
+      "status": "upcoming",
+      "version": null,
+      "source": "https://www.aerith.net/comet/future-s.html",
+      "angle": "Current bright-comet imaging opportunities, especially for southern observers"
+    }
+  }
 }
