@@ -1,0 +1,63 @@
+name: Smoke Test
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/smoke-test.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  discord:
+    runs-on: ubuntu-latest
+    env:
+      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+    steps:
+      - name: Check webhook secret
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "${DISCORD_WEBHOOK_URL:-}" ]; then
+            echo "DISCORD_WEBHOOK_URL is not configured." >&2
+            exit 1
+          fi
+
+      - name: Send French test notification
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import urllib.request
+
+          message = (
+              "🧪 **TEST — AstroPhoto Weekly**\n\n"
+              "La chaîne de notification Discord fonctionne. Aucun vrai numéro n’a été publié.\n\n"
+              "🌌 GitHub Actions est bien réveillé.\n"
+              "📡 Le webhook de test répond présent.\n"
+              "🔭 Prochaine étape : stabiliser le thème et valider une publication complète.\n\n"
+              "Si vous lisez ceci, les câbles USB ne sont officiellement plus notre seul problème."
+          )
+
+          payload = json.dumps({
+              "content": message,
+              "allowed_mentions": {"parse": []},
+          }).encode("utf-8")
+
+          request = urllib.request.Request(
+              os.environ["DISCORD_WEBHOOK_URL"],
+              data=payload,
+              headers={
+                  "Content-Type": "application/json",
+                  "User-Agent": "AstroPhotoWeeklySmokeTest/1.0",
+              },
+              method="POST",
+          )
+
+          with urllib.request.urlopen(request, timeout=20) as response:
+              if response.status not in (200, 204):
+                  raise SystemExit(f"Discord returned HTTP {response.status}")
+          PY
