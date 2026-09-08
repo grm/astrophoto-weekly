@@ -67,6 +67,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: deploy
     if: github.event_name == 'push'
+    environment: github-pages
     env:
       DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
       PAGE_URL: ${{ needs.deploy.outputs.page_url }}
