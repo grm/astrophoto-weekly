@@ -1,0 +1,26 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { formatDate, pathWithBase } from '../lib/site';
+
+interface Props {
+  issue: CollectionEntry<'issues'>;
+  featured?: boolean;
+}
+
+const { issue, featured = false } = Astro.props;
+const number = String(issue.data.number).padStart(3, '0');
+---
+<article class:list={['issue-card', { featured }]}> 
+  <div class="issue-card-topline">
+    <span class="issue-number">#{number}</span>
+    <time datetime={issue.data.date.toISOString()}>{formatDate(issue.data.date)}</time>
+  </div>
+  <h2><a href={pathWithBase(`/issues/${issue.id}/`)}>{issue.data.title}</a></h2>
+  <p>{issue.data.description}</p>
+  {issue.data.tags.length > 0 && (
+    <div class="tag-list" aria-label="Thèmes">
+      {issue.data.tags.slice(0, 4).map((tag) => <span>{tag}</span>)}
+    </div>
+  )}
+  <a class="read-more" href={pathWithBase(`/issues/${issue.id}/`)}>Lire l’édition <span aria-hidden="true">→</span></a>
+</article>
