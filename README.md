@@ -2,15 +2,18 @@
 
 A low-cost, autonomous publishing pipeline for a weekly French-language astrophotography newsletter.
 
-The editorial content is researched and written in French. The repository, code, automation, and documentation are maintained in English.
+Reader-facing content is written in French. Code, automation, internal identifiers, and developer documentation are written in English.
 
-## Goals
+## Stack
 
-- Publish one curated astrophotography edition per week.
-- Cover acquisition, processing, hardware, techniques, open source, community discussions, and upcoming imaging opportunities.
-- Prefer primary and authoritative sources.
-- Avoid repeating previously covered topics unless something materially changed.
-- Keep infrastructure close to zero-cost: static files, GitHub Pages, GitHub Actions, and a Discord webhook.
+- [Astro](https://astro.build/) for the static editorial site.
+- Markdown issues stored outside the application source tree.
+- GitHub Actions for build and deployment.
+- GitHub Pages for hosting and HTTPS.
+- A Discord incoming webhook for publication notifications.
+- A scheduled ChatGPT editorial task for research, curation, writing, and repository publishing.
+
+No permanent server, database, CMS, or separately billed OpenAI API job is required by the website pipeline.
 
 ## Architecture
 
@@ -21,70 +24,123 @@ Web research + source verification
         ↓
 French newsletter + French Discord digest
         ↓
-Commit to this repository
+content/digests/NNN.md
+        ↓
+data/editorial-history.json
+        ↓
+content/issues/NNN.md  ← publication trigger
         ↓
 GitHub Actions
         ↓
-Static site build
+Astro static build
         ↓
 GitHub Pages
         ↓
 Discord notification
 ```
 
+The issue file is created last so that the deployment workflow only sees complete publications.
+
 ## Repository layout
 
 ```text
-content/issues/          Full newsletter editions
-content/digests/         Discord-ready digests
+content/issues/          Published Markdown newsletter editions
+content/digests/         Discord-ready French digests
 data/editorial-history.json
                          Editorial memory used to avoid duplicate coverage
-data/site.json           Site configuration
-scripts/build.py         Static site and RSS generator
+data/site.json           Public site URL and metadata
+src/content.config.ts    Typed Astro content collection
+src/components/          Reusable editorial UI components
+src/layouts/             Page layouts
+src/pages/               Homepage, archives, issues, RSS, 404
+src/styles/              Global visual system
 scripts/discord.py       Discord webhook publisher
 .github/workflows/pages.yml
                          Build, deploy, then notify
+.github/workflows/smoke-test.yml
+                         Manual Discord integration test
 ```
 
-## Initial setup
+## Local development
 
-1. Open **Settings → Pages** and select **GitHub Actions** as the Pages source.
-2. Create an incoming webhook in the target Discord channel.
-3. Add its URL as the repository Actions secret `DISCORD_WEBHOOK_URL`.
-4. Push or update an edition under `content/issues/`.
+Requires Node.js 24 or newer.
 
-The Discord job runs only after a successful Pages deployment.
+```bash
+npm install
+npm run dev
+```
 
-## Custom domain and HTTPS
+Production build:
 
-Configure the custom domain in **Settings → Pages → Custom domain** and point the relevant DNS records to GitHub Pages. Once DNS is valid, GitHub Pages can enforce HTTPS.
+```bash
+npm run build
+```
 
-Update `site_url` in `data/site.json` when the production domain is known.
+The generated static site is written to `dist/`.
 
 ## Publishing an edition
 
-Each edition is stored as Markdown with YAML front matter:
+Each edition is stored as `content/issues/NNN.md` with YAML front matter:
 
 ```yaml
 ---
 number: 1
 date: 2026-09-08
 title: "AstroPhoto Weekly #001"
-description: "Short edition summary."
+description: "Short French edition summary."
+tags:
+  - traitement
+  - matériel
 ---
 ```
 
-The matching Discord digest is stored under `content/digests/001.md`.
+Required fields are `number`, `date`, `title`, and `description`. `tags` and `featured` are optional.
 
-A push to `main` triggers the Pages workflow.
+The matching Discord digest is stored as `content/digests/NNN.md`. It must remain below Discord's 2000-character message limit and contains a `[URL]` placeholder that is replaced after deployment.
 
-## Cost model
+## Deployment
 
-No permanent server or database is required. The site is static and the GitHub Actions build is intentionally small. Editorial generation is expected to run from the scheduled ChatGPT task rather than from a separately billed OpenAI API job inside GitHub Actions.
+GitHub Pages must use **GitHub Actions** as its source.
 
-## Language policy
+The production workflow:
 
-- Reader-facing newsletter content: French.
+1. installs the Astro dependencies;
+2. builds the static site;
+3. uploads and deploys `dist/` to GitHub Pages;
+4. detects whether exactly one new numbered issue was added;
+5. sends its French digest to Discord only after a successful deployment.
+
+Technical changes can redeploy the site without sending a Discord notification.
+
+## Discord secret
+
+The `DISCORD_WEBHOOK_URL` secret is read from the `github-pages` environment. A separate manual smoke-test workflow is available to validate the webhook without publishing a real issue.
+
+## Custom domain and HTTPS
+
+The current development URL is configured in `data/site.json`.
+
+When a production domain is ready:
+
+1. configure the domain in **Settings → Pages → Custom domain**;
+2. configure the DNS records;
+3. update `site_url` in `data/site.json` to the final HTTPS URL.
+
+`astro.config.mjs` derives the GitHub Pages base path from `site_url`. This means the current `/astrophoto-weekly/` repository path is handled automatically, and switching to a root custom domain removes that base path without rewriting internal links.
+
+## Editorial language policy
+
+- Full newsletter: French.
+- Website navigation and archive copy: French.
 - Discord notifications and digests: French.
-- Public archive copy and calls to action: French.
-- Code, scripts, internal identifiers, comments, commit-oriented implementation conventions, and developer documentation: English.
+- RSS reader-facing text: French.
+- Code, scripts, comments, internal metadata keys, workflow names, and developer documentation: English.
+
+## Editorial principles
+
+- Prefer primary and authoritative sources.
+- Verify important factual claims.
+- Explicitly label beta, nightly, preview, experimental, and rumor status.
+- Avoid repeating previously covered topics unless something materially changed.
+- Publish roughly 8–12 worthwhile topics rather than filling categories artificially.
+- Keep the newsletter independent from the project owner's personal equipment, software, and habits.
