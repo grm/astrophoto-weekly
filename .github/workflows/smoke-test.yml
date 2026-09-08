@@ -13,6 +13,7 @@ permissions:
 jobs:
   discord:
     runs-on: ubuntu-latest
+    environment: github-pages
     env:
       DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
     steps:
