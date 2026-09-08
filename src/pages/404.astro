@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { pathWithBase } from '../lib/site';
+---
+<BaseLayout title="Page introuvable">
+  <section class="shell page-intro narrow error-page">
+    <div class="error-code">404</div>
+    <h1>Cette cible n’est pas<br /><em>dans le champ.</em></h1>
+    <p>Plate solving négatif. La page a peut-être bougé, ou quelqu’un a touché au cadrage.</p>
+    <a class="button primary" href={pathWithBase('/')}>Retour à l’accueil</a>
+  </section>
+</BaseLayout>
