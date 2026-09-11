@@ -1,5 +1,5 @@
 {
-  "last_issue": 1,
+  "last_issue": 2,
   "topics": {
     "blurxterminator-ml5": {
       "issue": 1,
@@ -72,6 +72,70 @@
       "version": null,
       "source": "https://www.aerith.net/comet/future-s.html",
       "angle": "Current bright-comet imaging opportunities, especially for southern observers"
+    },
+    "dwarflab-draco": {
+      "issue": 2,
+      "date": "2026-09-11",
+      "status": "preorder",
+      "version": "Draco Standard / Draco SHO",
+      "source": "https://www.dwarflab.com/fr/products/draco-smart-telescope",
+      "angle": "90 mm smart telescope with integrated guiding, sensor rotation and 300 s single-exposure claims"
+    },
+    "astroart-rcastro-plugin": {
+      "issue": 2,
+      "date": "2026-09-11",
+      "status": "available",
+      "version": "RC-Astro CLI tools plugin 1.0 / Astroart 9 SP6",
+      "source": "https://www.msb-astroart.com/down_en.htm",
+      "angle": "Direct Astroart integration for BlurXTerminator, NoiseXTerminator and StarXTerminator CLI tools"
+    },
+    "citizen-astronomy-alpha": {
+      "issue": 2,
+      "date": "2026-09-11",
+      "status": "alpha",
+      "version": "0.1.1-alpha",
+      "source": "https://github.com/OgetayKayali/citizen-astronomy",
+      "angle": "Open desktop workflows for photometry, moving-object detection, Gaia-based analysis and science exports"
+    },
+    "stackingwizard-beta-4-2": {
+      "issue": 2,
+      "date": "2026-09-11",
+      "status": "public beta",
+      "version": "Beta 4.2",
+      "source": "https://astrowizard.lukomatico.com/stackingwizard.html",
+      "angle": "Dwarf mosaic handling, improved stretch behavior and lower alignment memory usage"
+    },
+    "tpe-web-4-7-beta": {
+      "issue": 2,
+      "date": "2026-09-11",
+      "status": "beta",
+      "version": "4.7 Beta",
+      "source": "https://forum.photoephemeris.com/t/tpe-web-4-7-beta-add-to-calendar/1306",
+      "angle": "Calendar export for shot plans and current planning views"
+    },
+    "seestar-siril-narrowband-scripts-1-7": {
+      "issue": 2,
+      "date": "2026-09-11",
+      "status": "community open-source workflow",
+      "version": "1.7.0",
+      "source": "https://gitlab.com/fdanowski/siril-seestar-narrowband-extraction-scripts/-/blob/main/Seestar_Siril_Scripts_README.md",
+      "angle": "Updated Ha/OIII/SII extraction scripts with per-frame gradient removal, drizzle options and FWHM filtering"
+    },
+    "sn-2026aaiv-ngc7331": {
+      "issue": 2,
+      "date": "2026-09-11",
+      "status": "confirmed transient",
+      "version": "Type Ia",
+      "source": "https://www.wis-tns.org/index.php/node/249210",
+      "angle": "Fresh supernova in NGC 7331 accessible to amateur imaging and time-series follow-up"
+    },
+    "rcastro-runtime-2-6-9": {
+      "issue": 2,
+      "date": "2026-09-11",
+      "status": "stable",
+      "version": "2.6.9",
+      "source": "https://www.rc-astro.com/version-history/",
+      "angle": "Licensing unification, GradientXTerminator fix and reliability update across platforms"
     }
   }
 }
