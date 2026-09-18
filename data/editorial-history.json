@@ -1,141 +1,30 @@
 {
-  "last_issue": 2,
+  "last_issue": 3,
   "topics": {
-    "blurxterminator-ml5": {
-      "issue": 1,
-      "date": "2026-09-08",
-      "status": "stable",
-      "version": "ML5 / RC Astro runtime 2.6.8",
-      "source": "https://www.rc-astro.com/blurxterminator-ml5/",
-      "angle": "Major deconvolution model update, compatibility, upgrade policy and practical impact"
-    },
-    "seestar-s50-pro": {
-      "issue": 1,
-      "date": "2026-09-08",
-      "status": "available",
-      "version": "S50 Pro",
-      "source": "https://www.zwoastro.com/2026/08/25/seestar-s50-pro-now-available-50mm-aperture-revealing-more-of-the-universe/4/",
-      "angle": "Recent smart-telescope hardware launch and what the specification shift means"
-    },
-    "siril-scripts-september-2026": {
-      "issue": 1,
-      "date": "2026-09-08",
-      "status": "mixed: main updates and open merge requests",
-      "version": null,
-      "source": "https://gitlab.com/free-astro/siril-scripts",
-      "angle": "Recent script-repository activity, AutoGradientRemoval update and open proposals"
-    },
-    "sharpcap-4-2-beta": {
-      "issue": 1,
-      "date": "2026-09-08",
-      "status": "beta",
-      "version": "4.2.15118.0",
-      "source": "https://www.sharpcap.co.uk/sharpcap/sharpcap-downloads/sharpcap-4-2-beta",
-      "angle": "Current beta, live-stacking improvements, observability tools and stability caveats"
-    },
-    "nina-3-3-nightly": {
-      "issue": 1,
-      "date": "2026-09-08",
-      "status": "nightly",
-      "version": "3.3 NIGHTLY",
-      "source": "https://github.com/isbeorn/nina/blob/develop/RELEASE_NOTES.md",
-      "angle": ".NET 10 migration, imaging safety and acquisition improvements; explicitly not stable"
-    },
-    "ha-redshift-ngc1566": {
-      "issue": 1,
-      "date": "2026-09-08",
-      "status": "technique",
-      "version": null,
-      "source": "https://app.astrobin.com/forum/topic/253312/filters/fourth-narrowband-filter-thoughts",
-      "angle": "Why galaxy redshift and fast-optics filter blue-shift can move H-alpha outside a narrow passband"
-    },
-    "centaurus-a-hydrogen-velocity-map": {
-      "issue": 1,
-      "date": "2026-09-08",
-      "status": "AstroBin IOTD",
-      "version": null,
-      "source": "https://app.astrobin.com/i/u6sbbz",
-      "angle": "Advanced amateur spectral-line mapping presented as an H-alpha radial-velocity image"
-    },
-    "new-moon-september-11-2026": {
-      "issue": 1,
-      "date": "2026-09-08",
-      "status": "upcoming",
-      "version": null,
-      "source": "https://www.timeanddate.com/moon/phases/%402989781",
-      "angle": "Upcoming dark-sky window"
-    },
-    "comets-10p-220p-september-2026": {
-      "issue": 1,
-      "date": "2026-09-08",
-      "status": "upcoming",
-      "version": null,
-      "source": "https://www.aerith.net/comet/future-s.html",
-      "angle": "Current bright-comet imaging opportunities, especially for southern observers"
-    },
-    "dwarflab-draco": {
-      "issue": 2,
-      "date": "2026-09-11",
-      "status": "preorder",
-      "version": "Draco Standard / Draco SHO",
-      "source": "https://www.dwarflab.com/fr/products/draco-smart-telescope",
-      "angle": "90 mm smart telescope with integrated guiding, sensor rotation and 300 s single-exposure claims"
-    },
-    "astroart-rcastro-plugin": {
-      "issue": 2,
-      "date": "2026-09-11",
-      "status": "available",
-      "version": "RC-Astro CLI tools plugin 1.0 / Astroart 9 SP6",
-      "source": "https://www.msb-astroart.com/down_en.htm",
-      "angle": "Direct Astroart integration for BlurXTerminator, NoiseXTerminator and StarXTerminator CLI tools"
-    },
-    "citizen-astronomy-alpha": {
-      "issue": 2,
-      "date": "2026-09-11",
-      "status": "alpha",
-      "version": "0.1.1-alpha",
-      "source": "https://github.com/OgetayKayali/citizen-astronomy",
-      "angle": "Open desktop workflows for photometry, moving-object detection, Gaia-based analysis and science exports"
-    },
-    "stackingwizard-beta-4-2": {
-      "issue": 2,
-      "date": "2026-09-11",
-      "status": "public beta",
-      "version": "Beta 4.2",
-      "source": "https://astrowizard.lukomatico.com/stackingwizard.html",
-      "angle": "Dwarf mosaic handling, improved stretch behavior and lower alignment memory usage"
-    },
-    "tpe-web-4-7-beta": {
-      "issue": 2,
-      "date": "2026-09-11",
-      "status": "beta",
-      "version": "4.7 Beta",
-      "source": "https://forum.photoephemeris.com/t/tpe-web-4-7-beta-add-to-calendar/1306",
-      "angle": "Calendar export for shot plans and current planning views"
-    },
-    "seestar-siril-narrowband-scripts-1-7": {
-      "issue": 2,
-      "date": "2026-09-11",
-      "status": "community open-source workflow",
-      "version": "1.7.0",
-      "source": "https://gitlab.com/fdanowski/siril-seestar-narrowband-extraction-scripts/-/blob/main/Seestar_Siril_Scripts_README.md",
-      "angle": "Updated Ha/OIII/SII extraction scripts with per-frame gradient removal, drizzle options and FWHM filtering"
-    },
-    "sn-2026aaiv-ngc7331": {
-      "issue": 2,
-      "date": "2026-09-11",
-      "status": "confirmed transient",
-      "version": "Type Ia",
-      "source": "https://www.wis-tns.org/index.php/node/249210",
-      "angle": "Fresh supernova in NGC 7331 accessible to amateur imaging and time-series follow-up"
-    },
-    "rcastro-runtime-2-6-9": {
-      "issue": 2,
-      "date": "2026-09-11",
-      "status": "stable",
-      "version": "2.6.9",
-      "source": "https://www.rc-astro.com/version-history/",
-      "angle": "Licensing unification, GradientXTerminator fix and reliability update across platforms"
-    }
+    "blurxterminator-ml5": {"issue":1,"date":"2026-09-08","status":"stable","version":"ML5 / RC Astro runtime 2.6.8","source":"https://www.rc-astro.com/blurxterminator-ml5/","angle":"Major deconvolution model update, compatibility, upgrade policy and practical impact"},
+    "seestar-s50-pro": {"issue":1,"date":"2026-09-08","status":"available","version":"S50 Pro","source":"https://www.zwoastro.com/2026/08/25/seestar-s50-pro-now-available-50mm-aperture-revealing-more-of-the-universe/4/","angle":"Recent smart-telescope hardware launch and what the specification shift means"},
+    "siril-scripts-september-2026": {"issue":1,"date":"2026-09-08","status":"mixed: main updates and open merge requests","version":null,"source":"https://gitlab.com/free-astro/siril-scripts","angle":"Recent script-repository activity, AutoGradientRemoval update and open proposals"},
+    "sharpcap-4-2-beta": {"issue":1,"date":"2026-09-08","status":"beta","version":"4.2.15118.0","source":"https://www.sharpcap.co.uk/sharpcap/sharpcap-downloads/sharpcap-4-2-beta","angle":"Current beta, live-stacking improvements, observability tools and stability caveats"},
+    "nina-3-3-nightly": {"issue":1,"date":"2026-09-08","status":"nightly","version":"3.3 NIGHTLY","source":"https://github.com/isbeorn/nina/blob/develop/RELEASE_NOTES.md","angle":".NET 10 migration, imaging safety and acquisition improvements; explicitly not stable"},
+    "ha-redshift-ngc1566": {"issue":1,"date":"2026-09-08","status":"technique","version":null,"source":"https://app.astrobin.com/forum/topic/253312/filters/fourth-narrowband-filter-thoughts","angle":"Why galaxy redshift and fast-optics filter blue-shift can move H-alpha outside a narrow passband"},
+    "centaurus-a-hydrogen-velocity-map": {"issue":1,"date":"2026-09-08","status":"AstroBin IOTD","version":null,"source":"https://app.astrobin.com/i/u6sbbz","angle":"Advanced amateur spectral-line mapping presented as an H-alpha radial-velocity image"},
+    "new-moon-september-11-2026": {"issue":1,"date":"2026-09-08","status":"upcoming","version":null,"source":"https://www.timeanddate.com/moon/phases/%402989781","angle":"Upcoming dark-sky window"},
+    "comets-10p-220p-september-2026": {"issue":1,"date":"2026-09-08","status":"upcoming","version":null,"source":"https://www.aerith.net/comet/future-s.html","angle":"Current bright-comet imaging opportunities, especially for southern observers"},
+    "dwarflab-draco": {"issue":2,"date":"2026-09-11","status":"preorder","version":"Draco Standard / Draco SHO","source":"https://www.dwarflab.com/fr/products/draco-smart-telescope","angle":"90 mm smart telescope with integrated guiding, sensor rotation and 300 s single-exposure claims"},
+    "astroart-rcastro-plugin": {"issue":2,"date":"2026-09-11","status":"available","version":"RC-Astro CLI tools plugin 1.0 / Astroart 9 SP6","source":"https://www.msb-astroart.com/down_en.htm","angle":"Direct Astroart integration for BlurXTerminator, NoiseXTerminator and StarXTerminator CLI tools"},
+    "citizen-astronomy-alpha": {"issue":2,"date":"2026-09-11","status":"alpha","version":"0.1.1-alpha","source":"https://github.com/OgetayKayali/citizen-astronomy","angle":"Open desktop workflows for photometry, moving-object detection, Gaia-based analysis and science exports"},
+    "stackingwizard-beta-4-2": {"issue":2,"date":"2026-09-11","status":"public beta","version":"Beta 4.2","source":"https://astrowizard.lukomatico.com/stackingwizard.html","angle":"Dwarf mosaic handling, improved stretch behavior and lower alignment memory usage"},
+    "tpe-web-4-7-beta": {"issue":2,"date":"2026-09-11","status":"beta","version":"4.7 Beta","source":"https://forum.photoephemeris.com/t/tpe-web-4-7-beta-add-to-calendar/1306","angle":"Calendar export for shot plans and current planning views"},
+    "seestar-siril-narrowband-scripts-1-7": {"issue":2,"date":"2026-09-11","status":"community open-source workflow","version":"1.7.0","source":"https://gitlab.com/fdanowski/siril-seestar-narrowband-extraction-scripts/-/blob/main/Seestar_Siril_Scripts_README.md","angle":"Updated Ha/OIII/SII extraction scripts with per-frame gradient removal, drizzle options and FWHM filtering"},
+    "sn-2026aaiv-ngc7331": {"issue":2,"date":"2026-09-11","status":"confirmed transient","version":"Type Ia","source":"https://www.wis-tns.org/index.php/node/249210","angle":"Fresh supernova in NGC 7331 accessible to amateur imaging and time-series follow-up"},
+    "rcastro-runtime-2-6-9": {"issue":2,"date":"2026-09-11","status":"stable","version":"2.6.9","source":"https://www.rc-astro.com/version-history/","angle":"Licensing unification, GradientXTerminator fix and reliability update across platforms"},
+    "astrowizard-true-colours": {"issue":3,"date":"2026-09-18","status":"current build","version":"18 September 2026","source":"https://astrowizard.lukomatico.com/","angle":"Gaia-based photometric star colour calibration, dual-band-to-SHO workflow and edit replay"},
+    "stackingwizard-beta-4-4": {"issue":3,"date":"2026-09-18","status":"public beta","version":"Beta 4.4","source":"https://astrowizard.lukomatico.com/","angle":"Workbench exposes advanced controls, improves mosaic/cloud-scale decisions and adds CSV grade export"},
+    "astroblink-beta-0-13": {"issue":3,"date":"2026-09-18","status":"beta","version":"0.13 Beta","source":"https://www.adrianoalfaro.com/en/project/astroblink/","angle":"New FITS frame culling and inspection tool with preview stretches, quality metrics, graphs and workflow decisions"},
+    "art-panel-pro-3-2-astro-match": {"issue":3,"date":"2026-09-18","status":"available","version":"3.2","source":"https://www.artenocturno.com/en/art-panel/","angle":"Astro Match aligns and blends tracked skies and H-alpha data into nightscape compositions across focal lengths"},
+    "sharpcap-4-2-15142": {"issue":3,"date":"2026-09-18","status":"beta","version":"4.2.15142.0","source":"https://www.sharpcap.co.uk/sharpcap/sharpcap-downloads/sharpcap-4-2-beta","angle":"Live-stack stretch/star-detection fixes and planetary live-stacking filename-template correction"},
+    "astronomy-photographer-year-2026": {"issue":3,"date":"2026-09-18","status":"winner announced","version":"APY18","source":"https://www.rmg.co.uk/press-release/zwo-astronomy-photographer-year-18-winners","angle":"Ali Alobaidly wins with 28.5-hour LRGB image of LDN 1235, a useful benchmark for modern deep-sky craft"},
+    "nina-planner-mcp": {"issue":3,"date":"2026-09-18","status":"experimental community project","version":null,"source":"https://github.com/roseengineering/nina_planner_mcp_server","angle":"Emerging MCP bridge proposes AI-client access to NINA planning, telemetry and observatory actions"},
+    "saturn-neptune-oppositions-september-2026": {"issue":3,"date":"2026-09-18","status":"upcoming","version":null,"source":"https://www.rmg.co.uk/stories/space-astronomy/astronomy/night-sky-highlights-september-2026","angle":"Late-September planetary imaging window, with Neptune at opposition and Saturn nearby"}
   }
 }
