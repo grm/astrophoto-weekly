@@ -1,5 +1,5 @@
 {
-  "last_issue": 6,
+  "last_issue": 7,
   "topics": {
     "blurxterminator-ml5": {
       "issue": 1,
@@ -400,6 +400,94 @@
       "version": null,
       "source": "https://starwalk.space/en/news/what-is-opposition-in-astronomy",
       "angle": "Vesta at opposition Oct 13 near mag 6.3, accessible moving-object blink experiment"
+    },
+    "vaonis-atlas-launch": {
+      "issue": 7,
+      "date": "2026-10-16",
+      "status": "preorder",
+      "version": "Atlas Single/Twin",
+      "source": "https://vaonis.com/pages/product/atlas",
+      "angle": "October 15 official modular telescope launch with one or two 80 mm modules"
+    },
+    "tg-linear-master-blend": {
+      "issue": 7,
+      "date": "2026-10-16",
+      "status": "open-source",
+      "version": "1.6.1",
+      "source": "https://github.com/norman123al/TGScripts",
+      "angle": "New October 11 PixInsight linear master fusion script"
+    },
+    "tg-lrgb-deconvolution-match": {
+      "issue": 7,
+      "date": "2026-10-16",
+      "status": "open-source",
+      "version": "1.4.1",
+      "source": "https://github.com/norman123al/TGScripts",
+      "angle": "New October 11 PixInsight star width matching for L and RGB"
+    },
+    "nina-opencode-1-1": {
+      "issue": 7,
+      "date": "2026-10-16",
+      "status": "general release",
+      "version": "1.1.0.0",
+      "source": "https://github.com/michelebergo/nina.plugin.opencode/releases/tag/1.1.0.0",
+      "angle": "NINA agent plugin reaches general catalogue on October 15"
+    },
+    "nina-aiweather-1-15-8": {
+      "issue": 7,
+      "date": "2026-10-16",
+      "status": "plugin release",
+      "version": "1.15.8.0",
+      "source": "https://github.com/michelebergo/nina.plugin.aiweather/releases/tag/1.15.8.0",
+      "angle": "Dark site cloud interpretation and fixed camera framing"
+    },
+    "distributed-wbpp-1-9-1": {
+      "issue": 7,
+      "date": "2026-10-16",
+      "status": "open-source",
+      "version": "1.9.1",
+      "source": "https://github.com/caelo-works/distributed-wbpp/releases/tag/v1.9.1",
+      "angle": "Cluster processing for WBPP 3.1.0 and PixInsight 1.9.5"
+    },
+    "nina-3-3-timing": {
+      "issue": 7,
+      "date": "2026-10-16",
+      "status": "nightly",
+      "version": "3.3",
+      "source": "https://github.com/isbeorn/nina/pull/429",
+      "angle": "Meridian, dome, WCS and ephemeris calculations corrected in develop"
+    },
+    "app-beta48": {
+      "issue": 7,
+      "date": "2026-10-16",
+      "status": "public beta",
+      "version": "2.0.0-beta48",
+      "source": "https://www.astropixelprocessor.com/community/release-information/astro-pixel-processor-2-0-0-beta48-release-notes/",
+      "angle": "Material corrections to beta47 processing regressions"
+    },
+    "sky-intruders-0-3-1": {
+      "issue": 7,
+      "date": "2026-10-16",
+      "status": "beta",
+      "version": "0.3.1",
+      "source": "https://github.com/caelo-works/sky-intruders/releases/tag/v0.3.1",
+      "angle": "October 13 catalog integrity update to satellite trail identification script"
+    },
+    "apod-manhattan-ir": {
+      "issue": 7,
+      "date": "2026-10-16",
+      "status": "APOD selection",
+      "version": null,
+      "source": "https://science.nasa.gov/image-article/apod-2026-october-15-the-milky-way-over-manhattan/",
+      "angle": "Near infrared imaging of the Milky Way above Manhattan"
+    },
+    "orionids-oct-2026": {
+      "issue": 7,
+      "date": "2026-10-16",
+      "status": "upcoming",
+      "version": null,
+      "source": "https://science.nasa.gov/solar-system/skywatching/whats-up-october-2026-skywatching-tips-from-nasa/",
+      "angle": "October 21-22 meteor opportunity after moonset"
     }
   }
 }
