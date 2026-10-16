@@ -24,22 +24,17 @@ Web research + source verification
         ↓
 French newsletter + French Discord digest
         ↓
-content/digests/NNN.md
+ONE GitHub write: data/submissions/NNN.json
         ↓
-data/editorial-history.json
+GitHub Actions validates and atomically commits:
+  content/digests/NNN.md
+  data/editorial-history.json
+  content/issues/NNN.md
         ↓
-content/issues/NNN.md  ← publication trigger
-        ↓
-GitHub Actions
-        ↓
-Astro static build
-        ↓
-GitHub Pages
-        ↓
-Discord notification
+Astro build → GitHub Pages → Discord notification
 ```
 
-The issue file is created last so that the deployment workflow only sees complete publications.
+The scheduled editorial task creates only one numbered JSON submission. GitHub Actions validates it and commits the digest, history and issue together. A failed validation cannot publish an incomplete issue.
 
 ## Repository layout
 
@@ -79,6 +74,12 @@ npm run build
 The generated static site is written to `dist/`.
 
 ## Publishing an edition
+
+The editorial task creates `data/submissions/NNN.json` with exactly `issue` (complete Markdown), `digest` (complete French Discord text), and `topics` (editorial history additions keyed by unique slug). Do not write the three final files separately. The workflow validates the next issue number, front matter, digest length and topic IDs, then creates the three files in one Git commit. The resulting deployment sends Discord after GitHub Pages succeeds.
+
+**Repository setting:** GitHub Actions needs `contents: write` access for the publication commit. Under Settings → Actions → General → Workflow permissions, enable read/write permissions if required. The workflow requests `contents: write` explicitly.
+
+
 
 Each edition is stored as `content/issues/NNN.md` with YAML front matter:
 
