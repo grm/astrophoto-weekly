@@ -1,5 +1,5 @@
 {
-  "last_issue": 7,
+  "last_issue": 8,
   "topics": {
     "blurxterminator-ml5": {
       "issue": 1,
@@ -488,6 +488,94 @@
       "version": null,
       "source": "https://science.nasa.gov/solar-system/skywatching/whats-up-october-2026-skywatching-tips-from-nasa/",
       "angle": "October 21-22 meteor opportunity after moonset"
+    },
+    "nina-equipment-hubs-oct17": {
+      "issue": 8,
+      "date": "2026-10-23",
+      "status": "merged to develop, not stable",
+      "version": "NINA 3.3 develop",
+      "source": "https://github.com/isbeorn/nina/commit/d2422bb5d6caa8f5a2e90effeebc2ae40f979f56",
+      "angle": "Multi-device safety/weather/switch hubs, all-safe gating"
+    },
+    "nina-plugin-plate-solvers-oct22": {
+      "issue": 8,
+      "date": "2026-10-23",
+      "status": "merged to develop, not stable",
+      "version": "NINA 3.3 develop",
+      "source": "https://github.com/isbeorn/nina/commit/83e4a4fc4a739a1a174a4ad3262f5cdc34b2541b",
+      "angle": "Extensible plate solver provider interfaces for plugins"
+    },
+    "indi-am5-custom-park-direct-oct22": {
+      "issue": 8,
+      "date": "2026-10-23",
+      "status": "merged upstream, distribution pending",
+      "version": null,
+      "source": "https://github.com/indilib/indi/commit/790c53f5e5252c1860b2b09044ab45aff5a6b540",
+      "angle": "Avoid risky intermediate home slew when custom park is set"
+    },
+    "sharpcap-4-2-beta-15290-clahe": {
+      "issue": 8,
+      "date": "2026-10-23",
+      "status": "beta",
+      "version": "4.2.15290.0",
+      "source": "https://www.sharpcap.co.uk/sharpcap/sharpcap-downloads/sharpcap-4-2-beta",
+      "angle": "CLAHE in deep sky live stacking and all-sky orientation reticule"
+    },
+    "saspro-1-22-12-psd-rejection": {
+      "issue": 8,
+      "date": "2026-10-23",
+      "status": "released with post2 packaging update",
+      "version": "1.22.12.post2",
+      "source": "https://github.com/setiastro/setiastrosuitepro/blob/main/updates.json",
+      "angle": "PSD import, more robust winsorized/ESD rejection and white balance improvements"
+    },
+    "kstars-ekos-shutter-task-queues-oct19": {
+      "issue": 8,
+      "date": "2026-10-23",
+      "status": "merged upstream, not necessarily packaged",
+      "version": null,
+      "source": "https://github.com/KDE/kstars/commit/e93ba724a7143d8f496dbd797a9418cda84fe54c",
+      "angle": "Automated dome shutter open/close with property-aware tasks"
+    },
+    "phd2-indi-fpack-fits-fz-oct20": {
+      "issue": 8,
+      "date": "2026-10-23",
+      "status": "merged upstream, release pending",
+      "version": null,
+      "source": "https://github.com/OpenPHDGuiding/phd2/commit/84ef5e44e436f38a926c864a9061468e03d9c9b9",
+      "angle": "Guiding camera support for tile-compressed INDI FITS frames"
+    },
+    "nina-plugin-management-redesign-oct17": {
+      "issue": 8,
+      "date": "2026-10-23",
+      "status": "merged to develop, not stable",
+      "version": "NINA 3.3 develop",
+      "source": "https://github.com/isbeorn/nina/commit/28bd4b229e5b2b037b3f74f9f8a1ba20fd6a2fce",
+      "angle": "Plugin browser redesign, compatible version history, rollback and cached assets"
+    },
+    "heliofits-suite-v2026-10": {
+      "issue": 8,
+      "date": "2026-10-23",
+      "status": "research/open-source software release",
+      "version": "v2026.10",
+      "source": "https://zenodo.org/records/23524599",
+      "angle": "Solar FITS viewing workflow on macOS and heliophysics visualization"
+    },
+    "apod-new-ghosts-cassiopeia-oct21": {
+      "issue": 8,
+      "date": "2026-10-23",
+      "status": "APOD image and candidate structures",
+      "version": null,
+      "source": "https://science.nasa.gov/image-article/apod-2026-october-21-new-ghosts-revealed-in-cassiopeia/",
+      "angle": "100-hour OIII imaging reveals three candidate faint structures near Gamma Cas"
+    },
+    "moon-pleiades-close-approach-oct27-2026": {
+      "issue": 8,
+      "date": "2026-10-23",
+      "status": "upcoming imaging opportunity, location-dependent occultation",
+      "version": null,
+      "source": "https://starwalk.space/en/news/m45-pleiades-star-cluster",
+      "angle": "Moon-M45 close approach October 27-28 and possible occultations"
     }
   }
 }
