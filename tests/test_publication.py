@@ -1,4 +1,6 @@
 import copy
+import io
+import urllib.error
 import importlib.util
 import json
 import os
@@ -111,6 +113,25 @@ class PublicationTests(unittest.TestCase):
         with patch.object(discord, 'ROOT', self.root), patch.dict(os.environ, {'DISCORD_WEBHOOK_PIXINSIGHT': 'configured'}):
             with self.assertRaisesRegex(ValueError, 'UTF-16'):
                 discord.send('pixinsight', '001')
+
+    def test_forum_rejection_creates_one_thread_without_retrying_other_errors(self):
+        webhook = 'https://discord.com/api/webhooks/123/test-token'
+        error = urllib.error.HTTPError(webhook, 400, 'Bad request', {}, io.BytesIO(b'{"code":220001}'))
+        from unittest.mock import MagicMock
+        response = MagicMock()
+        response.__enter__.return_value = io.BytesIO(b'{"id":"message","channel_id":"thread"}')
+        with patch.object(discord.urllib.request, 'urlopen', side_effect=[error, response]) as request:
+            result = discord.post_message(webhook, 'An edition', thread_name='PixInsight #001')
+        self.assertEqual(result['channel_id'], 'thread')
+        first = json.loads(request.call_args_list[0].args[0].data)
+        second = json.loads(request.call_args_list[1].args[0].data)
+        self.assertNotIn('thread_name', first)
+        self.assertEqual(second['thread_name'], 'PixInsight #001')
+        for failure in [urllib.error.HTTPError(webhook, 400, 'Bad request', {}, io.BytesIO(b'{"code":50035}')), OSError('timeout')]:
+            with patch.object(discord.urllib.request, 'urlopen', side_effect=failure) as request:
+                with self.assertRaises(RuntimeError):
+                    discord.post_message(webhook, 'An edition')
+                self.assertEqual(request.call_count, 1)
 
     def test_uncertain_delivery_is_not_reserved_again(self):
         box = self.root / 'data/discord-outbox.json'

@@ -45,7 +45,8 @@ def main():
                 f"🧪 **Test de connexion — {config['title']}**\n\n"
                 "Ce salon recevra sa newsletter dédiée tous les quinze jours, lorsque la matière le mérite. "
                 "La veille est hebdomadaire ; aucune édition n’a été publiée par ce test.\n\n"
-                "📡 Le bon logiciel, le bon salon : connexion établie !")
+                "📡 Le bon logiciel, le bon salon : connexion établie !",
+                thread_name=f"Test de connexion — {config['name']}")
             print(f"{series}: test acknowledged in channel {result['channel_id']}, message {result['message_id']}")
         except (ValueError, RuntimeError, OSError) as exc:
             failed = True

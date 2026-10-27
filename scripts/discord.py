@@ -42,17 +42,20 @@ def send(series, slug):
     content = digest_path.read_text(encoding='utf-8').replace('[URL]', f'{page_url}/{issue_path}').strip()
     if len(content.encode('utf-16-le')) // 2 > 2000:
         raise ValueError('Discord digest exceeds 2000 UTF-16 code units after URL expansion')
-    return post_message(webhook, content)
+    return post_message(webhook, content, thread_name=f"{series_config(ROOT)[series]['title']} #{slug}" if series != 'general' else f'AstroPhoto Weekly #{slug}')
 
 
-def post_message(webhook, content):
+def post_message(webhook, content, thread_name=None, _forum=False):
     parts = urllib.parse.urlsplit(webhook)
     if parts.scheme != 'https' or parts.hostname not in {'discord.com', 'discordapp.com'} or not re.fullmatch(r'/api(?:/v\d+)?/webhooks/\d+/[^/]+', parts.path):
         raise ValueError('Invalid Discord incoming webhook URL')
     query = urllib.parse.parse_qs(parts.query)
     query['wait'] = ['true']
     url = urllib.parse.urlunsplit(parts._replace(query=urllib.parse.urlencode(query, doseq=True)))
-    payload = json.dumps({'content': content, 'allowed_mentions': {'parse': []}}, ensure_ascii=False).encode('utf-8')
+    body = {'content': content, 'allowed_mentions': {'parse': []}}
+    if _forum:
+        body['thread_name'] = (thread_name or 'Newsletter astrophoto')[:100]
+    payload = json.dumps(body, ensure_ascii=False).encode('utf-8')
     request = urllib.request.Request(url, data=payload, headers={
         'Content-Type': 'application/json', 'User-Agent': 'AstroPhotoWeekly/1.0',
     }, method='POST')
@@ -61,7 +64,15 @@ def post_message(webhook, content):
             result = json.load(response)
     except urllib.error.HTTPError as exc:
         # Do not print exceptions containing webhook URLs/tokens.
-        raise RuntimeError(f'Discord HTTP {exc.code}; delivery requires inspection') from None
+        try:
+            error_code = json.loads(exc.read(65536)).get('code')
+        except (ValueError, OSError):
+            error_code = None
+        if exc.code == 400 and error_code == 220001 and not _forum:
+            # Discord explicitly rejected the request: no message was created.
+            # Forum/media channels require a new thread for each edition.
+            return post_message(webhook, content, thread_name=thread_name, _forum=True)
+        raise RuntimeError(f'Discord HTTP {exc.code}, code {error_code}; delivery requires inspection') from None
     except (OSError, ValueError):
         raise RuntimeError('Discord response unavailable; delivery is uncertain; do not retry automatically') from None
     if not result.get('id') or not result.get('channel_id'):
