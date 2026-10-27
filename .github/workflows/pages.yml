@@ -106,7 +106,7 @@ jobs:
       DISCORD_WEBHOOK_NINA: ${{ secrets.DISCORD_WEBHOOK_NINA }}
       DISCORD_WEBHOOK_PHOTOSHOP_ASTRO: ${{ secrets.DISCORD_WEBHOOK_PHOTOSHOP_ASTRO }}
       PAGE_URL: ${{ needs.deploy.outputs.page_url }}
-      BATCH_FILE: ${{ runner.temp }}/discord-batch.json
+      BATCH_FILE: /tmp/astrophoto-discord-batch.json
     steps:
       - uses: actions/checkout@v4
         with:
