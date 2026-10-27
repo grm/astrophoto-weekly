@@ -1,0 +1,29 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import config from '../../../../data/specialists/series.json';
+import { formatDate, pathWithBase } from '../../../lib/site';
+
+export async function getStaticPaths() {
+  return (await getCollection('specialists')).map((issue) => ({
+    params: { series: issue.data.series, slug: String(issue.data.number).padStart(3, '0') }, props: { issue },
+  }));
+}
+interface Props { issue: CollectionEntry<'specialists'>; }
+const { issue } = Astro.props;
+const publication = config[issue.data.series];
+const { Content } = await render(issue);
+---
+<BaseLayout title={issue.data.title} description={issue.data.description} article rssPath={`/veilles/${issue.data.series}/rss.xml`} rssTitle={publication.title}>
+  <article class="issue shell">
+    <header class="issue-hero">
+      <a class="back-link" href={pathWithBase(`/veilles/${issue.data.series}/`)}>← Toutes les éditions {publication.name}</a>
+      <div class="issue-kicker">{publication.title} <span>#{String(issue.data.number).padStart(3, '0')}</span></div>
+      <h1>{issue.data.title}</h1>
+      <p class="issue-description">{issue.data.description}</p>
+      <div class="issue-meta"><time datetime={issue.data.date.toISOString()}>{formatDate(issue.data.date)}</time><span>Veille spécialisée · sources liées dans l’article</span></div>
+    </header>
+    <div class="prose issue-prose"><Content /></div>
+    <footer class="issue-end"><span>✦</span><p>Prochaine édition quand l’actualité le mérite.</p><a href={pathWithBase(`/veilles/${issue.data.series}/`)}>Voir les archives →</a></footer>
+  </article>
+</BaseLayout>

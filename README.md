@@ -145,3 +145,13 @@ When a production domain is ready:
 - Avoid repeating previously covered topics unless something materially changed.
 - Publish roughly 8–12 worthwhile topics rather than filling categories artificially.
 - Keep the newsletter independent from the project owner's personal equipment, software, and habits.
+
+## Specialist newsletters
+
+PixInsight, Siril, N.I.N.A. and Photoshop for astrophotography have independent newsletters under `/veilles/`. Research runs weekly; editions are published fortnightly only when worthwhile material is available. The generalist editorial task and selection remain independent.
+
+See [specialist editorial and publication contract](docs/specialist-newsletters.md) for the source policy, weekly watch snapshots, publication slots and one-write submission format. Specialist submissions use `data/specialists/submissions/SERIES/NNN.json`. The shared workflow accepts the existing generalist format unchanged, drains pending submissions, deploys the site, then delivers each digest to its own destination.
+
+Set `DISCORD_WEBHOOK_PIXINSIGHT`, `DISCORD_WEBHOOK_SIRIL`, `DISCORD_WEBHOOK_NINA`, and `DISCORD_WEBHOOK_PHOTOSHOP_ASTRO` in the `github-pages` environment. The existing `DISCORD_WEBHOOK_URL` remains the generalist destination. The specialist smoke workflow verifies distinct destinations without revealing tokens.
+
+Run publication/routing checks with `python -m pip install PyYAML==6.0.2` then `python -m unittest discover -s tests -v`. The Discord outbox records acknowledged or uncertain delivery status; inspect the target channel before any manual retry.

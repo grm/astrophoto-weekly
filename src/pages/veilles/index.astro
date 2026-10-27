@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import config from '../../../data/specialists/series.json';
+import { pathWithBase } from '../../lib/site';
+---
+<BaseLayout title="Les veilles logiciels" description="Quatre newsletters spécialisées pour approfondir PixInsight, Siril, N.I.N.A. et Photoshop pour l’astro.">
+  <section class="shell page-intro">
+    <div class="eyebrow"><span></span> Les veilles logiciels</div>
+    <h1>Votre logiciel.<br /><em>Une veille dédiée.</em></h1>
+    <p>Quatre sélections indépendantes pour aller plus loin. Un rendez-vous tous les quinze jours, quand l’actualité le mérite, avec des sources et des explications pratiques.</p>
+  </section>
+  <section class="shell section-block compact-top">
+    <div class="issue-grid">
+      {Object.entries(config).map(([id, series]) => (
+        <article class="issue-card">
+          <div class="issue-card-topline">Newsletter spécialisée · tous les quinze jours</div>
+          <h2><a href={pathWithBase(`/veilles/${id}/`)}>{series.name}</a></h2>
+          <p>{series.description}</p>
+          <a class="read-more" href={pathWithBase(`/veilles/${id}/`)}>Découvrir les éditions →</a>
+        </article>
+      ))}
+    </div>
+    <p class="specialist-note">AstroPhoto Weekly continue chaque semaine avec sa propre sélection généraliste. Une actualité importante peut être abordée dans plusieurs newsletters, avec un angle différent.</p>
+  </section>
+</BaseLayout>

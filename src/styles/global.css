@@ -201,3 +201,9 @@ nav a:hover { color: var(--text); }
   .issue-hero { padding-top: 50px; }
   .issue-kicker { margin-top: 44px; }
 }
+
+.specialist-note { margin-top: 32px; max-width: 780px; color: var(--muted); }
+@media (max-width: 760px) {
+  .nav-shell { flex-wrap: wrap; padding-block: 18px; gap: 18px; }
+  .nav-shell nav { flex-wrap: wrap; gap: 16px; }
+}

@@ -1,0 +1,32 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import config from '../../../../data/specialists/series.json';
+import { formatDate, pathWithBase } from '../../../lib/site';
+
+export function getStaticPaths() {
+  return Object.entries(config).map(([series, publication]) => ({ params: { series }, props: { publication } }));
+}
+const { publication } = Astro.props;
+const series = Astro.params.series;
+const issues = (await getCollection('specialists', ({ data }) => data.series === series)).sort((a, b) => b.data.number - a.data.number);
+---
+<BaseLayout title={publication.title} description={publication.description} rssPath={`/veilles/${series}/rss.xml`} rssTitle={publication.title}>
+  <section class="shell page-intro">
+    <a class="back-link" href={pathWithBase('/veilles/')}>← Toutes les veilles</a>
+    <div class="eyebrow"><span></span> Tous les quinze jours · selon l’actualité</div>
+    <h1>{publication.name}</h1>
+    <p>{publication.description}</p>
+    <div class="hero-actions"><a class="button ghost" href={pathWithBase(`/veilles/${series}/rss.xml`)}>Suivre cette veille via RSS</a></div>
+  </section>
+  <section class="shell section-block compact-top">
+    {issues.length ? <div class="issue-grid">{issues.map((issue) => (
+      <article class="issue-card">
+        <div class="issue-card-topline"><span class="issue-number">#{String(issue.data.number).padStart(3, '0')}</span><time datetime={issue.data.date.toISOString()}>{formatDate(issue.data.date)}</time></div>
+        <h2><a href={pathWithBase(`/veilles/${issue.id}/`)}>{issue.data.title}</a></h2>
+        <p>{issue.data.description}</p>
+        <a class="read-more" href={pathWithBase(`/veilles/${issue.id}/`)}>Lire l’édition →</a>
+      </article>
+    ))}</div> : <div class="empty-state"><h2>La première édition se prépare.</h2><p>Des sujets vérifiés, des explications utiles et aucun remplissage pour respecter un quota.</p></div>}
+  </section>
+</BaseLayout>

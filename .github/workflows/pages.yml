@@ -5,15 +5,18 @@ on:
     branches: ["main"]
     paths:
       - "data/submissions/*.json"
+      - "data/specialists/submissions/**/*.json"
+      - "data/specialists/series.json"
       - "content/issues/**"
+      - "content/specialists/issues/**"
       - "data/site.json"
       - "src/**"
       - "public/**"
       - "astro.config.mjs"
       - "package.json"
       - "tsconfig.json"
-      - "scripts/discord.py"
-      - "scripts/publish_submission.py"
+      - "scripts/**"
+      - "tests/**"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -22,6 +25,8 @@ permissions:
   pages: write
   id-token: write
 
+# A common deployment queue avoids deploying an older snapshot over a newer edition.
+# Every run drains all pending submissions from current main, including coalesced events.
 concurrency:
   group: pages
   cancel-in-progress: false
@@ -30,65 +35,48 @@ jobs:
   publish-submission:
     runs-on: ubuntu-latest
     outputs:
-      slug: ${{ steps.publish.outputs.slug }}
+      has_pending: ${{ steps.publish.outputs.has_pending }}
+      has_errors: ${{ steps.publish.outputs.has_errors }}
     steps:
-      - name: Checkout
+      - name: Checkout current main
         uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
-      - name: Detect new submission
-        id: detect
-        shell: bash
-        env:
-          BEFORE: ${{ github.event.before }}
-          AFTER: ${{ github.sha }}
-          EVENT_NAME: ${{ github.event_name }}
-        run: |
-          set -euo pipefail
-          if [[ "$EVENT_NAME" != "push" ]]; then exit 0; fi
-          FILES="$(git diff --diff-filter=A --name-only "$BEFORE" "$AFTER" -- 'data/submissions/*.json')"
-          COUNT="$(printf '%s\n' "$FILES" | sed '/^$/d' | wc -l | tr -d ' ')"
-          if [[ "$COUNT" -eq 0 ]]; then exit 0; fi
-          if [[ "$COUNT" -ne 1 ]]; then echo "Expected one new submission" >&2; exit 1; fi
-          echo "file=$FILES" >> "$GITHUB_OUTPUT"
-      - name: Publish in one commit
-        if: steps.detect.outputs.file != ''
+      - name: Install validator dependency
+        run: python -m pip install PyYAML==6.0.2
+      - name: Verify publication isolation and delivery routing
+        run: python -m unittest discover -s tests -v
+      - name: Prepare pending publications
         id: publish
+        run: python scripts/process_submissions.py
+      - name: Commit validated publications together
         shell: bash
-        env:
-          SUBMISSION: ${{ steps.detect.outputs.file }}
         run: |
           set -euo pipefail
-          python scripts/publish_submission.py "$SUBMISSION"
-          SLUG="$(basename "$SUBMISSION" .json)"
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add "content/digests/$SLUG.md" data/editorial-history.json "content/issues/$SLUG.md"
-          git commit -m "publish: AstroPhoto Weekly #$SLUG"
-          git push origin HEAD:main
-          echo "slug=$SLUG" >> "$GITHUB_OUTPUT"
+          git add content/issues content/digests content/specialists data/editorial-history.json data/specialists/*/editorial-history.json data/discord-outbox.json
+          if ! git diff --cached --quiet; then
+            git commit -m "publish: commit validated newsletter submissions"
+            git push origin HEAD:main
+          fi
 
   build:
     runs-on: ubuntu-latest
     needs: publish-submission
     steps:
-      - name: Checkout latest main
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           ref: main
           fetch-depth: 0
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: "24"
-      - name: Install dependencies
-        run: npm install --no-audit --no-fund
-      - name: Build Astro site
-        run: npm run build
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
+      - run: npm install --no-audit --no-fund
+      - run: npm run build
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: dist
           include-hidden-files: true
@@ -109,40 +97,52 @@ jobs:
   notify-discord:
     runs-on: ubuntu-latest
     needs: [publish-submission, deploy]
-    if: github.event_name == 'push'
+    if: needs.publish-submission.outputs.has_pending == 'true'
     environment: github-pages
     env:
       DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+      DISCORD_WEBHOOK_PIXINSIGHT: ${{ secrets.DISCORD_WEBHOOK_PIXINSIGHT }}
+      DISCORD_WEBHOOK_SIRIL: ${{ secrets.DISCORD_WEBHOOK_SIRIL }}
+      DISCORD_WEBHOOK_NINA: ${{ secrets.DISCORD_WEBHOOK_NINA }}
+      DISCORD_WEBHOOK_PHOTOSHOP_ASTRO: ${{ secrets.DISCORD_WEBHOOK_PHOTOSHOP_ASTRO }}
       PAGE_URL: ${{ needs.deploy.outputs.page_url }}
+      BATCH_FILE: ${{ runner.temp }}/discord-batch.json
     steps:
-      - name: Checkout latest main
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           ref: main
           fetch-depth: 0
-      - name: Detect published issue
-        id: issue
+      - name: Reserve delivery attempts
+        run: python scripts/discord_outbox.py reserve
+      - name: Persist attempts before external delivery
         shell: bash
-        env:
-          STAGED_SLUG: ${{ needs.publish-submission.outputs.slug }}
-          BEFORE: ${{ github.event.before }}
-          AFTER: ${{ github.sha }}
         run: |
           set -euo pipefail
-          if [[ -n "$STAGED_SLUG" ]]; then
-            echo "slug=$STAGED_SLUG" >> "$GITHUB_OUTPUT"
-            exit 0
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/discord-outbox.json
+          if ! git diff --cached --quiet; then
+            git commit -m "delivery: reserve Discord notification attempts"
+            git push origin HEAD:main
           fi
-          FILES="$(git diff --diff-filter=A --name-only "$BEFORE" "$AFTER" -- 'content/issues/*.md' || true)"
-          COUNT="$(printf '%s\n' "$FILES" | sed '/^$/d' | wc -l | tr -d ' ')"
-          if [[ "$COUNT" -eq 0 ]]; then exit 0; fi
-          if [[ "$COUNT" -ne 1 ]]; then echo "Expected one new issue" >&2; exit 1; fi
-          FILE="$(printf '%s\n' "$FILES" | head -n 1)"
-          SLUG="$(basename "$FILE" .md)"
-          [[ "$SLUG" =~ ^[0-9]{3}$ ]] || exit 1
-          echo "slug=$SLUG" >> "$GITHUB_OUTPUT"
-      - name: Send Discord notification
-        if: steps.issue.outputs.slug != ''
-        env:
-          ISSUE_SLUG: ${{ steps.issue.outputs.slug }}
-        run: python scripts/discord.py
+      - name: Deliver and record Discord acknowledgements
+        run: python scripts/discord_outbox.py send
+      - name: Persist delivery results
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add data/discord-outbox.json
+          if ! git diff --cached --quiet; then
+            git commit -m "delivery: record Discord notification results"
+            git push origin HEAD:main
+          fi
+
+  editorial-status:
+    runs-on: ubuntu-latest
+    needs: [publish-submission, deploy]
+    if: needs.publish-submission.outputs.has_errors == 'true'
+    steps:
+      - run: |
+          echo "Some submissions were rejected. Valid editions were deployed; inspect validation warnings."
+          exit 1

@@ -1,0 +1,30 @@
+{
+  "pixinsight": {
+    "name": "PixInsight",
+    "title": "La veille PixInsight",
+    "description": "Versions, scripts, modules et méthodes de traitement : une sélection approfondie pour les utilisateurs de PixInsight.",
+    "first_publication": "2026-10-30",
+    "webhook_secret": "DISCORD_WEBHOOK_PIXINSIGHT"
+  },
+  "siril": {
+    "name": "Siril",
+    "title": "La veille Siril",
+    "description": "Versions, scripts, automatisation et techniques de traitement : les évolutions utiles de l’écosystème Siril.",
+    "first_publication": "2026-11-06",
+    "webhook_secret": "DISCORD_WEBHOOK_SIRIL"
+  },
+  "nina": {
+    "name": "N.I.N.A.",
+    "title": "La veille N.I.N.A.",
+    "description": "Acquisition, plugins, autofocus et planification : les nouveautés qui méritent votre prochaine nuit claire.",
+    "first_publication": "2026-10-30",
+    "webhook_secret": "DISCORD_WEBHOOK_NINA"
+  },
+  "photoshop-astro": {
+    "name": "Photoshop pour l’astro",
+    "title": "La veille Photoshop astro",
+    "description": "Photoshop et Camera Raw appliqués à l’astrophotographie : outils, méthodes et ressources sélectionnés pour leur intérêt pratique.",
+    "first_publication": "2026-11-06",
+    "webhook_secret": "DISCORD_WEBHOOK_PHOTOSHOP_ASTRO"
+  }
+}

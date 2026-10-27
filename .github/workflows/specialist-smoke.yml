@@ -1,0 +1,27 @@
+name: Check specialist Discord channels
+on:
+  push:
+    branches: [main]
+    paths: ['data/specialists/setup-check.json']
+  workflow_dispatch:
+    inputs:
+      send_test_messages:
+        description: Send one clearly labelled test message in each specialist channel
+        type: boolean
+        default: false
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    environment: github-pages
+    env:
+      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+      DISCORD_WEBHOOK_PIXINSIGHT: ${{ secrets.DISCORD_WEBHOOK_PIXINSIGHT }}
+      DISCORD_WEBHOOK_SIRIL: ${{ secrets.DISCORD_WEBHOOK_SIRIL }}
+      DISCORD_WEBHOOK_NINA: ${{ secrets.DISCORD_WEBHOOK_NINA }}
+      DISCORD_WEBHOOK_PHOTOSHOP_ASTRO: ${{ secrets.DISCORD_WEBHOOK_PHOTOSHOP_ASTRO }}
+      SEND_SETUP_TESTS: ${{ github.event_name == 'push' || inputs.send_test_messages }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: python scripts/check_specialist_webhooks.py
