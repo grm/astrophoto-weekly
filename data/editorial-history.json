@@ -1,5 +1,5 @@
 {
-  "last_issue": 8,
+  "last_issue": 9,
   "topics": {
     "blurxterminator-ml5": {
       "issue": 1,
@@ -576,6 +576,102 @@
       "version": null,
       "source": "https://starwalk.space/en/news/m45-pleiades-star-cluster",
       "angle": "Moon-M45 close approach October 27-28 and possible occultations"
+    },
+    "pixinsight-1-9-6-blind-solving": {
+      "issue": 9,
+      "date": "2026-10-30",
+      "status": "stable",
+      "version": "1.9.6 build 1713",
+      "source": "https://pixinsight.net/dev/index.php",
+      "angle": "30 October platform release: blind solving, five scripts, two processes, new File Explorer"
+    },
+    "siril-1-4-5-gesdt-live-stacking": {
+      "issue": 9,
+      "date": "2026-10-30",
+      "status": "stable",
+      "version": "1.4.5",
+      "source": "https://siril.org/fr/download/2026-10-28-siril-1-4-5/",
+      "angle": "GESDT rejection correction, live stacking, XISF, FITS sequence metadata"
+    },
+    "saspro-1-23-4-nina-solver": {
+      "issue": 9,
+      "date": "2026-10-30",
+      "status": "released",
+      "version": "1.23.4.post1",
+      "source": "https://github.com/setiastro/setiastrosuitepro/blob/main/updates.json",
+      "angle": "SASproSolver usable as NINA solver, satellite rejection guards, PI 1.9.6 metadata"
+    },
+    "tgscripts-subframe-review-0-42": {
+      "issue": 9,
+      "date": "2026-10-30",
+      "status": "community script",
+      "version": "0.42.3",
+      "source": "https://github.com/norman123al/TGScripts",
+      "angle": "Quality review combines regional measures, sky transparency, four rankings and undo"
+    },
+    "sharpcap-beta-15332-preview": {
+      "issue": 9,
+      "date": "2026-10-30",
+      "status": "beta",
+      "version": "4.2.15332.0",
+      "source": "https://www.sharpcap.co.uk/sharpcap/sharpcap-downloads/sharpcap-4-2-beta",
+      "angle": "Faster partial-area updates while adjusting live stack enhancement"
+    },
+    "kstars-blind-plate-solving-recovery-oct28": {
+      "issue": 9,
+      "date": "2026-10-30",
+      "status": "merged upstream",
+      "version": "develop October 28",
+      "source": "https://github.com/KDE/kstars/commit/df4b9613e5b4c3233713986c680d2ad5fbf9bb7b",
+      "angle": "Recovery when pointing and FOV hints are wrong"
+    },
+    "indi-kstars-stream-planet-tracking-oct25": {
+      "issue": 9,
+      "date": "2026-10-30",
+      "status": "merged upstream",
+      "version": "October 25",
+      "source": "https://github.com/indilib/indi/commit/97b8839fce1b1a40069f8ec7d6ae1fdbb6a1bdfc",
+      "angle": "Streaming frame centroid tracking and Ekos planet/moon/solar centering"
+    },
+    "nina-aiweather-confirm-transition-oct25": {
+      "issue": 9,
+      "date": "2026-10-30",
+      "status": "plugin release",
+      "version": "1.15.16.0",
+      "source": "https://github.com/michelebergo/nina.plugin.aiweather/commit/d741c8c3d93f5a056c5d3f12880301afbcd03b56",
+      "angle": "Second-frame state confirmation, provider fallback, corrupt-frame rejection"
+    },
+    "indi-10micron-external-unpark-oct27": {
+      "issue": 9,
+      "date": "2026-10-30",
+      "status": "merged upstream",
+      "version": "driver 1.4 upstream",
+      "source": "https://github.com/indilib/indi/commit/27b1b95918834d6bf1c18957146d38911101283f",
+      "angle": "Detect externally unparked 10Micron mount without assuming unknown states"
+    },
+    "sgpro-4-6-beta-1660": {
+      "issue": 9,
+      "date": "2026-10-30",
+      "status": "beta",
+      "version": "4.6.0.1660",
+      "source": "https://forum.sequencegeneratorpro.com/t/sequence-generator-pro-4-6-0-1660-beta-is-released-for-test/24040",
+      "angle": "Native ASTAP scale hint and shutdown controls"
+    },
+    "apod-ganymede-io-mutual-occultation-oct28": {
+      "issue": 9,
+      "date": "2026-10-30",
+      "status": "APOD selection",
+      "version": null,
+      "source": "https://science.nasa.gov/image-article/apod-2026-october-28-the-mutual-occultation-of-ganymede-and-io/",
+      "angle": "Michael Wong video of Oct 20 mutual occultation of Ganymede and Io"
+    },
+    "taurids-venus-spica-november-2026": {
+      "issue": 9,
+      "date": "2026-10-30",
+      "status": "upcoming imaging opportunity",
+      "version": null,
+      "source": "https://skyandtelescope.org/astronomy-news/observing-news/this-weeks-sky-at-a-glance-october-30-november-8/",
+      "angle": "Early November Taurid fireballs and predawn Venus/Spica/Moon composition"
     }
   }
 }

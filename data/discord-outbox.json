@@ -13,6 +13,11 @@
       "status": "sent",
       "message_id": "1565700182161498324",
       "channel_id": "1565700182161498324"
+    },
+    {
+      "series": "general",
+      "slug": "009",
+      "status": "pending"
     }
   ]
 }
