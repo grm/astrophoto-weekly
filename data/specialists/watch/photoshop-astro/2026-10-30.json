@@ -1,0 +1,68 @@
+{
+  "series": "photoshop-astro",
+  "checked_at": "2026-10-30",
+  "decision": "off-week",
+  "candidates": [
+    {
+      "id": "rcastro-2610-photoshop-hdr-clipping",
+      "title": "RC Astro : un correctif pour préserver les hautes lumières en 32 bits",
+      "source": "https://www.rc-astro.com/version-history/",
+      "source_date": "2026-10-10",
+      "discovered_at": "2026-10-30",
+      "kind": "actualite",
+      "status": "released",
+      "version": "2.6.10",
+      "angle": "Rattrapage éventuel : expliquer le correctif d’écrêtage des valeurs HDR supérieures à 1 dans Photoshop, utile aux traitements astro en 32 bits.",
+      "verification": "Historique original lu. L’entrée du 10 octobre 2026 annonce explicitement une correction de l’écrêtage des images Photoshop HDR 32 bits avec valeurs supérieures à 1.0, ainsi que des améliorations de vitesse et fiabilité. Extension commerciale, non fonction native Adobe. Déjà âgé de plus de quatorze jours au contrôle : ne pas présenter comme nouveauté de la quinzaine. Aucun gain de vitesse mesuré. Compatibilité/version requise à préciser auprès de l’éditeur avant publication."
+    },
+    {
+      "id": "astrobackyard-photoshop-workflow-reference",
+      "title": "De PixInsight à Photoshop : savoir à quel moment passer aux calques",
+      "source": "https://astrobackyard.com/astrophotography-processing-workflow/",
+      "source_date": "2026-04-02",
+      "discovered_at": "2026-10-30",
+      "kind": "ressource-a-decouvrir",
+      "status": "documented-resource",
+      "version": null,
+      "angle": "Ressource de traitement du ciel profond : attribuer à Trevor Jones son ordre de traitement, sans l’ériger en recette universelle.",
+      "verification": "Article original lu : publication affichée le 2 avril 2026, mise à jour affichée le 5 octobre 2026. Présente PixInsight pour le traitement de base puis Photoshop pour les couleurs et finitions ; utilise des logiciels et extensions sous licence. Ne pas traiter la date de mise à jour comme une nouvelle méthode publiée ce jour-là. Le texte a été examiné, pas la vidéo ni le guide premium. Aucun traitement reproduit."
+    },
+    {
+      "id": "adobe-smart-object-stacking-astro-reference",
+      "title": "Empiler dans Photoshop : comprendre ce que fait l’objet dynamique",
+      "source": "https://helpx.adobe.com/photoshop/desktop/create-manage-layers/create-layer-compositions/create-and-process-image-stacks.html",
+      "source_date": null,
+      "discovered_at": "2026-10-30",
+      "kind": "ressource-a-decouvrir",
+      "status": "documented-resource",
+      "version": null,
+      "angle": "Un point pratique sur l’empilement non destructif et ses limites pour le ciel étoilé ; ne pas confondre avec un prétraitement astronomique complet.",
+      "verification": "Documentation Adobe lue : chargement de fichiers en calques, alignement, conversion en objet dynamique et modes Mean/Median ; l’usage astrophotographique est explicitement cité. Date de création de la fonction non vérifiée : ni l’actualisation de la documentation ni la date de consultation ne sont une date de sortie. Pour une application astro, expliquer séparément l’alignement sur les étoiles et le premier plan ; pas de promesse automatique sur tout ciel nocturne. Aucun empilement réalisé."
+    },
+    {
+      "id": "adobe-camera-raw-vs-filter-reference",
+      "title": "Camera Raw ou filtre Camera Raw : le même nom ne donne pas les mêmes outils",
+      "source": "https://helpx.adobe.com/camera-raw/desktop/get-started/overview-and-setup/differences-camera-raw-camera-raw.html",
+      "source_date": null,
+      "discovered_at": "2026-10-30",
+      "kind": "ressource-a-decouvrir",
+      "status": "documented-resource",
+      "version": null,
+      "angle": "Clarifier le parcours RAW pour les paysages nocturnes et le rôle du filtre sur un calque Photoshop.",
+      "verification": "Page officielle lue, portant une date de mise à jour du 7 décembre 2023. Elle distingue les possibilités de Camera Raw et du filtre et liste des outils indisponibles dans ce dernier, dont Denoise. Documentation ancienne : corroborer les restrictions dans la version réellement proposée avant tout conseil détaillé. Ne pas publier cette date de mise à jour comme une actualité ou une date de sortie."
+    },
+    {
+      "id": "astrobackyard-photoshop-astro-tool-selection",
+      "title": "Photoshop pour l’astro : des masques avant la collection de plugins",
+      "source": "https://astrobackyard.com/photoshop-astrophotography/",
+      "source_date": null,
+      "discovered_at": "2026-10-30",
+      "kind": "ressource-a-decouvrir",
+      "status": "documented-resource",
+      "version": null,
+      "angle": "Un repère accessible sur les calques, masques et extensions réellement adaptés au ciel profond et aux paysages nocturnes.",
+      "verification": "Article de l’auteur original lu, avec date de mise à jour du 5 octobre 2026 mais sans date initiale confirmée sur la page consultée. Distingue prétraitement spécialisé et finitions Photoshop, mentionne des plugins commerciaux et recommande d’en contrôler OS/version/profondeur. Source de pratique personnelle, pas benchmark indépendant. Le guide payant et les vidéos liés n’ont pas été examinés."
+    }
+  ],
+  "coverage_notes": "Veille Photoshop astro indépendante et complète : pages Adobe nouveautés Photoshop, notes de version, Camera Raw 18.7, bugs corrigés, empilement, panoramas et différences Camera Raw/filtre ; historique RC Astro ; guides originaux AstroBackyard ; recherches ciblées sur nouvelles méthodes astro. Les pages nouveautés consultées présentent Photoshop 27.11 et Camera Raw 18.7 comme versions de septembre ; leurs dates de mise à jour en octobre ne prouvent pas des sorties d’octobre. Aucun jour de sortie précis ni bénéfice astro documenté n’a été confirmé pour ces fonctions génériques : pas de candidat actualité retenu. Le tutoriel Seestar daté du 22 octobre sur Orion a été ouvert et exclu car il traite l’application Seestar, pas Photoshop. Les articles sur ciel ajouté/compositing et IA générative n’ont pas été assimilés à du traitement astronomique fidèle ; aucune vidéo sous-jacente n’a été déclarée visionnée. Pas de nouveauté astro datée des quatorze derniers jours suffisamment corroborée dans les sources retenues ; conserver les ressources comme telles, sans remplissage. Aucune fonctionnalité ni image testée. Premier créneau le 6 novembre 2026 : pas de publication, de déploiement ni de Discord aujourd’hui. Réexaminer toutes les pistes à cette date."
+}
