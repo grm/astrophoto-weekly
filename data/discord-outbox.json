@@ -1,3 +1,14 @@
 {
-  "messages": []
+  "messages": [
+    {
+      "series": "nina",
+      "slug": "001",
+      "status": "pending"
+    },
+    {
+      "series": "pixinsight",
+      "slug": "001",
+      "status": "pending"
+    }
+  ]
 }

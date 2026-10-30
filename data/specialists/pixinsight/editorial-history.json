@@ -1,1 +1,29 @@
-{"last_issue": 0, "topics": {}}
+{
+  "last_issue": 1,
+  "topics": {
+    "pixinsight-196-build1713-announcement": {
+      "issue": 1,
+      "date": "2026-10-30",
+      "status": "released-announcement",
+      "version": "1.9.6 build 1713",
+      "source": "https://pixinsight.net/dev/index.php",
+      "angle": "Official announcement summary; full article inaccessible; no inferred extension compatibility"
+    },
+    "rcastro-2610-pixinsight-maintenance": {
+      "issue": 1,
+      "date": "2026-10-30",
+      "status": "released",
+      "version": "2.6.10",
+      "source": "https://www.rc-astro.com/version-history/",
+      "angle": "October 10 maintenance, explicit PI1.9.5 support; distinguish software and ML models"
+    },
+    "distributed-wbpp-191-192-october": {
+      "issue": 1,
+      "date": "2026-10-30",
+      "status": "beta",
+      "version": "1.9.2",
+      "source": "https://pixinsight-scripts.caelo.works/en/scripts/distributed-wbpp",
+      "angle": "October 13 functional update versus October 14 docs; author validation and compatibility limits"
+    }
+  }
+}

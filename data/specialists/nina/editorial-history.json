@@ -1,1 +1,29 @@
-{"last_issue": 0, "topics": {}}
+{
+  "last_issue": 1,
+  "topics": {
+    "nina-32hf1rc2-acquisition-branch-review": {
+      "issue": 1,
+      "date": "2026-10-30",
+      "status": "release-candidate",
+      "version": "3.2 HF1 RC2",
+      "source": "https://f002.backblazeb2.com/file/ninasetup/Betas/3.2.1.3002/RELEASE_NOTES.html",
+      "angle": "Current candidate notes; acquisition correctness and sequencing behavior, not stable rollout"
+    },
+    "target-scheduler-51040-rejection-sorting": {
+      "issue": 1,
+      "date": "2026-10-30",
+      "status": "nina-33-nightly-only",
+      "version": "5.10.4.0",
+      "source": "https://tcpalmer.github.io/nina-scheduler/release.html",
+      "angle": "October 20 release; rejected image handling, numeric sorting, compatibility and preview side effect"
+    },
+    "hocus-focus-validation-replay-resource": {
+      "issue": 1,
+      "date": "2026-10-30",
+      "status": "documented-resource",
+      "version": null,
+      "source": "https://ghilios.github.io/hocus-focus/overview/autofocus/",
+      "angle": "Undated original guide; distinguish validation and fitting; do not attribute features to October 16 release"
+    }
+  }
+}
