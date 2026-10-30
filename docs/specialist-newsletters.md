@@ -62,3 +62,14 @@ The Pages workflow drains pending submissions from current main, validates each 
 After successful deployment, each Discord attempt is reserved in Git before sending. Acknowledged Discord message/channel IDs are persisted. Uncertain/interrupted deliveries are held for manual inspection, never retried automatically. A missing specialist secret cannot fall back to the generalist webhook. `data/discord-outbox.json` changes do not retrigger publication.
 
 The setup workflow verifies four distinct specialist destinations, different from the generalist, and sends clearly labelled setup test messages. Workflow dispatch verifies only by default; opt in explicitly to send test messages again.
+
+## Reader-facing clarity, dates and voice
+
+Owner feedback on 2026-10-30: the first pilots were unclear, dates were hard to interpret, and the playful/offbeat tone was missing. Apply this to all four specialist series, without changing the generalist.
+
+- Lead with the actual useful change and explain who it helps, in concrete French. Explain an acronym or specialist term briefly when needed. Replace abstract caveats and developer release-note prose with practical consequences.
+- Give the complete event/release date (day, French month, year) at the start of each news item, alongside the exact version and stable/beta/nightly status. A date consulted, page update, Git commit or newsletter publication is never a substitute for a release date. Check primary changelogs/releases for the actual event date.
+- Prioritize developments from the preceding 14 days. Explicitly separate older catch-up items and undated practical resources from dated news. An unconfirmed event date excludes an item from the dated-news section; it may justify a clearly labelled reference/dossier. Never fill a news quota with undated material.
+- Open with a short lively editorial hook. Use friendly, knowledgeable, slightly offbeat French: situational astronomy/software humor in the introduction and a few natural asides, not only an emoji or a joke in the Discord digest. Keep jokes short; factual claims and instructions must remain unambiguous. Avoid canned or repetitive jokes and forced humor in every paragraph.
+- Use a readable item flow: dated headline; what changes; En pratique (who benefits/what to do); one short À savoir only for a material compatibility or reliability limit; direct source. Put genuine verification gaps in a compact note, rather than repeatedly narrating research mechanics. Preserve honesty about inaccessible sources, author-only performance claims and unperformed tests.
+- Use a compact date/status table when an edition mixes news, catch-up and resources. Put dated news first, resources afterwards. Both article and Discord digest must carry this editorial voice. Titles promise a concrete benefit, not an abstract verification exercise.
