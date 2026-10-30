@@ -3,12 +3,16 @@
     {
       "series": "nina",
       "slug": "001",
-      "status": "sending"
+      "status": "sent",
+      "message_id": "1565700179636519073",
+      "channel_id": "1565700179636519073"
     },
     {
       "series": "pixinsight",
       "slug": "001",
-      "status": "sending"
+      "status": "sent",
+      "message_id": "1565700182161498324",
+      "channel_id": "1565700182161498324"
     }
   ]
 }
