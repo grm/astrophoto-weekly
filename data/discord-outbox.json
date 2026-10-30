@@ -3,12 +3,12 @@
     {
       "series": "nina",
       "slug": "001",
-      "status": "pending"
+      "status": "sending"
     },
     {
       "series": "pixinsight",
       "slug": "001",
-      "status": "pending"
+      "status": "sending"
     }
   ]
 }
