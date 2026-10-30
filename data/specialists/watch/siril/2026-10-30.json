@@ -1,0 +1,56 @@
+{
+  "series": "siril",
+  "checked_at": "2026-10-30",
+  "decision": "off-week",
+  "candidates": [
+    {
+      "id": "siril-145-stacking-python-maintenance",
+      "title": "Siril 1.4.5 : de l’ordre dans l’empilement et les scripts",
+      "source": "https://siril.org/download/2026-10-28-siril-1-4-5/",
+      "source_date": "2026-10-28",
+      "discovered_at": "2026-10-30",
+      "kind": "actualite",
+      "status": "stable",
+      "version": "1.4.5",
+      "angle": "Expliquer ce que les corrections changent pour les utilisateurs de GESDT, du live stacking et des scripts Python, sans transformer les notes de version en inventaire indigeste.",
+      "verification": "Annonce officielle et page de téléchargement concordantes : sortie le 28 octobre 2026. Notes intégrales lues : correction du rejet GESDT, gain/échelle des données via set_image_pixeldata, annulation via pipes, propriété is_headless, édition des en-têtes FITS sur une séquence et réduction de banding accélérée. macOS Ventura 13 minimum ; avertissement officiel sur le paquet tiers Flatpak. Siril 1.5 reste en développement. Aucun logiciel testé. Recontrôler l’état des paquets et les éventuels correctifs avant publication."
+    },
+    {
+      "id": "siril-book-october-status",
+      "title": "Le livre Siril : un guide papier, pas une nouvelle fonction du logiciel",
+      "source": "https://siril.org/2026/10/the-siril-book-where-things-stand/",
+      "source_date": "2026-10-17",
+      "discovered_at": "2026-10-30",
+      "kind": "actualite",
+      "status": "published",
+      "version": null,
+      "angle": "Ressource pédagogique commerciale distincte du logiciel et de sa documentation gratuite ; à reclasser en rattrapage si retenue le 6 novembre.",
+      "verification": "L’index officiel date l’article du 17 octobre 2026 ; article intégral lu. Il indique des éditions française, anglaise et italienne disponibles et des éditions allemande et espagnole prévues en novembre, sans les présenter comme déjà sorties. Aucun PDF prévu d’après l’auteur. La date de l’article n’est pas la date de sortie de chacune des éditions du livre. Disponibilité à revérifier."
+    },
+    {
+      "id": "siril-python-debugging-guide",
+      "title": "Scripts Python : enquêter sur le plantage sans accuser la nébuleuse",
+      "source": "https://siril.org/tutorials/python_debug/",
+      "source_date": null,
+      "discovered_at": "2026-10-30",
+      "kind": "ressource-a-decouvrir",
+      "status": "documented-resource",
+      "version": "Siril >=1.4.0",
+      "angle": "Un coin pratique sur le débogage dans VSCode, avec prérequis et distinction entre sirilpy intégré et pySiril externe.",
+      "verification": "Guide original de Cécile Melis lu : Siril 1.4.0 minimum, initialisation de l’environnement Python, mode de débogage et attachement au processus. Aucune date de publication vérifiée ; le badge NEW de l’index ne prouve pas une sortie récente. Documentation Python liée consultée : API qualifiée d’expérimentale ; ne pas confondre sirilpy et pySiril. Aucun débogage exécuté."
+    },
+    {
+      "id": "siril-mosaics-official-guide",
+      "title": "Mosaïques : assembler les panneaux sans faire exploser la mémoire",
+      "source": "https://siril.org/tutorials/mosaics/",
+      "source_date": null,
+      "discovered_at": "2026-10-30",
+      "kind": "ressource-a-decouvrir",
+      "status": "documented-resource",
+      "version": "Siril 1.4",
+      "angle": "Présenter le parcours astrométrie, alignement et normalisation des recouvrements, avec les limites mémoire.",
+      "verification": "Guide officiel intégral lu : mosaïques de panneaux empilés et de smart-télescopes, normalisation sur les recouvrements, estimation de taille et contraintes mémoire. Il mentionne une limite d’affichage à 32768 pixels par dimension pour Siril 1.4 et des limites FITSEQ ; vérifier ces restrictions dans la version en vigueur avant de les recommander. Date de publication non confirmée : ressource, pas actualité."
+    }
+  ],
+  "coverage_notes": "Veille indépendante : actualités et téléchargements officiels Siril, notes complètes 1.4.5, index et guides de tutoriels, documentation de l’API Python, recherche ciblée sur scripts et dépôt GitLab. GitLab Releases n’a renvoyé aucun texte lisible et la page du tag 1.4.5 était inaccessible ; l’interface des tickets scripts n’a pas fourni de liste de changements exploitable. Les affirmations de sortie sont donc fondées sur les pages officielles Siril lisibles, sans attribuer de nouveauté à un commit non examiné. Les vidéos et espaces privés n’ont pas été consultés. Aucun test d’image ou de logiciel. Premier créneau le 6 novembre 2026 : pas de soumission, déploiement ni envoi Discord aujourd’hui. Toutes les pistes devront être revérifiées ; les ressources plus anciennes seront séparées des actualités datées."
+}
