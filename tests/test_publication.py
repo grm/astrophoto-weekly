@@ -36,6 +36,8 @@ class PublicationTests(unittest.TestCase):
             target = self.root / relative
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_text((REPO / relative).read_text())
+        # Delivery fixtures must not inherit the live publication outbox.
+        (self.root / 'data/discord-outbox.json').write_text('{"messages": []}')
         self.original_general = (self.root / 'data/editorial-history.json').read_bytes()
         for series in specialist.series_config(self.root):
             path = self.root / 'data/specialists' / series / 'editorial-history.json'
