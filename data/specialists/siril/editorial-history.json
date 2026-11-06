@@ -1,1 +1,29 @@
-{"last_issue": 0, "topics": {}}
+{
+  "last_issue": 1,
+  "topics": {
+    "siril-145-stacking-python-maintenance": {
+      "issue": 1,
+      "date": "2026-11-06",
+      "status": "stable",
+      "version": "1.4.5",
+      "source": "https://siril.org/download/2026-10-28-siril-1-4-5/",
+      "angle": "Corrections du rejet et de la réinjection de pixels ; maintenance stable du 28 octobre, pas la branche 1.5."
+    },
+    "siril-mosaics-official-guide": {
+      "issue": 1,
+      "date": "2026-11-06",
+      "status": "documented-resource",
+      "version": "1.4",
+      "source": "https://siril.org/tutorials/mosaics/",
+      "angle": "Ressource non datée : distinguer panneaux empilés et longues séries de brutes, normalisation et mémoire."
+    },
+    "siril-python-debugging-guide": {
+      "issue": 1,
+      "date": "2026-11-06",
+      "status": "documented-resource",
+      "version": "Siril >=1.4.0",
+      "source": "https://siril.org/tutorials/python_debug/",
+      "angle": "Ressource non datée : attachement VSCode au processus Python et distinction sirilpy/pySiril."
+    }
+  }
+}

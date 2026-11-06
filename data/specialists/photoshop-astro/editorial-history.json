@@ -1,1 +1,29 @@
-{"last_issue": 0, "topics": {}}
+{
+  "last_issue": 1,
+  "topics": {
+    "rcastro-2610-photoshop-hdr-clipping": {
+      "issue": 1,
+      "date": "2026-11-06",
+      "status": "released-catch-up",
+      "version": "2.6.10",
+      "source": "https://www.rc-astro.com/version-history/",
+      "angle": "Rattrapage du 10 octobre : écrêtage HDR32 corrigé, extension commerciale ; 2.6.11 encore TBD."
+    },
+    "jez-hughes-astro-layer-masks-reference": {
+      "issue": 1,
+      "date": "2026-11-06",
+      "status": "documented-resource",
+      "version": "Photoshop CC 2017 demonstration",
+      "source": "https://www.jezhughesphotography.com/photoshop-astrophotography-processing-using-layer-masks/",
+      "angle": "Référence ancienne non datée : séparer étirement, accentuation et débruitage, inspection des halos, limites des anciens outils."
+    },
+    "adobe-camera-raw-vs-filter-reference": {
+      "issue": 1,
+      "date": "2026-11-06",
+      "status": "documented-resource",
+      "version": null,
+      "source": "https://helpx.adobe.com/camera-raw/desktop/get-started/overview-and-setup/differences-camera-raw-camera-raw.html",
+      "angle": "Finition astro documentée et distinction RAW/master TIFF : Denoise absent du filtre et formats admissibles vérifiés."
+    }
+  }
+}
