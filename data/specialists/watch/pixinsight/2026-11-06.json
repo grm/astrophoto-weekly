@@ -1,0 +1,56 @@
+{
+  "series": "pixinsight",
+  "checked_at": "2026-11-06",
+  "candidates": [
+    {
+      "id": "distributed-wbpp-withdrawal-20261031",
+      "title": "31 octobre 2026 — Distributed WBPP, toutes versions : retrait et arrêt du support",
+      "source": "https://pixinsight-scripts.caelo.works/en/scripts/distributed-wbpp",
+      "source_date": "2026-10-31",
+      "discovered_at": "2026-11-06",
+      "kind": "actualite",
+      "status": "withdrawn",
+      "version": "all versions",
+      "angle": "Actualiser le sujet du pilote : cette extension tierce de calcul multi-PC est retirée. Le WBPP intégré à PixInsight n'est pas le produit retiré. L'auteur demande d'arrêter les clients et de désinstaller l'extension sur chaque machine.",
+      "verification": "Retrait effectif daté du 31 octobre sur le site ; les copies installées restent présentes. Procédure originale lue : https://github.com/caelo-works/distributed-wbpp/blob/main/docs/END-OF-LIFE.md . Elle mentionne l'échéance du 12 décembre 2026, distincte du retrait déjà annoncé. L'avertissement spécifique d'exécution de code reçu du réseau vise particulièrement la 1.0.0 : ne pas l'attribuer à toutes les versions. Mise à jour matérielle après le sujet 1.9.1/1.9.2 de l'édition 001."
+    },
+    {
+      "id": "rcastro-2611-cpd-proxy-preview",
+      "title": "RC Astro 2.6.11 : maintenance annoncée, date de sortie indéterminée",
+      "source": "https://www.rc-astro.com/version-history/",
+      "source_date": null,
+      "discovered_at": "2026-11-06",
+      "kind": "ressource-a-decouvrir",
+      "status": "unreleased-date-unconfirmed",
+      "version": "2.6.11",
+      "angle": "Suivre l'accès aux licences derrière un proxy et la gestion des permissions du module PixInsight des extensions commerciales RC Astro. Revérifier avant toute recommandation de mise à jour.",
+      "verification": "L'historique porte « Version 2.6.11 — TBD ». Il décrit la fin de la réparation automatique des permissions, remplacée par des indications manuelles, et la suppression d'un ancien mécanisme de mise à jour inutilisé, pour les règles CPD 1.0.2. Le module utilise le dépôt standard de PixInsight. Le 12 décembre est une échéance pour d'autres changements futurs, pas la sortie de 2.6.11. Disponibilité effective et compatibilité 1.9.6 non établies."
+    },
+    {
+      "id": "tg-astro-bucket-list-planning-resource",
+      "title": "Astro Bucket List 0.34.1 : ranger ses cibles sans confondre liste et visibilité",
+      "source": "https://norman123al.github.io/TGScripts/TGScripts_repository/doc/scripts/AstroBucketList/AstroBucketList.html",
+      "source_date": null,
+      "discovered_at": "2026-11-06",
+      "kind": "ressource-a-decouvrir",
+      "status": "documented-resource",
+      "version": "0.34.1",
+      "angle": "Listes, notes, statut des images et cartes de repérage : de quoi éviter que la prochaine nébuleuse reste sur un post-it. Les catégories mensuelles ne calculent pas une fenêtre d'acquisition locale.",
+      "verification": "Guide original lu : script tiers, PixInsight 1.9.5 ou ultérieur avec V8 ; listes compatibles Stellarium et cartes SIMBAD/DSS. L'index https://norman123al.github.io/TGScripts/ donne des dates de dernier commit, pas de publication : 1er novembre dans son tableau, 2 novembre dans le détail. Aucune release GitHub publiée trouvée. Ressource non datée, sans annoncer une nouveauté du 1er ou du 2 novembre."
+    },
+    {
+      "id": "tg-subframe-quality-review-resource",
+      "title": "Subframe Quality Review 0.42.3 : choisir les brutes à écarter avant de relancer WBPP",
+      "source": "https://norman123al.github.io/TGScripts/TGScripts_repository/doc/scripts/SubframeQualityReview/SubframeQualityReview.html",
+      "source_date": null,
+      "discovered_at": "2026-11-06",
+      "kind": "ressource-a-decouvrir",
+      "status": "documented-resource",
+      "version": "0.42.3",
+      "angle": "Comparer les images recalées d'un traitement WBPP, puis décider manuellement quelles brutes originales déplacer. La liste des 10 % les moins bien classées invite à regarder, pas à supprimer automatiquement.",
+      "verification": "Description, prérequis et parcours de revue du guide original lus. Script tiers utilisant le processus intégré SubframeSelector ; PixInsight 1.9.5 minimum. Les masters de comparaison doivent conserver les dimensions des images recalées, sans recadrage ni drizzle. Le déplacement exige une association vérifiée avec l'original et une confirmation explicite. Le 30 octobre affiché sur l'index est un dernier commit, pas une sortie prouvée."
+    }
+  ],
+  "decision": "off-week",
+  "coverage_notes": "Passe PixInsight effectuée avant la passe N.I.N.A., indépendamment. Édition 001, soumission 001, historique propre et arborescence des veilles inspectés ; aucune veille antérieure datée. Au 6 novembre 2026 à Paris : sept jours après le créneau du 30 octobre, semaine de veille ; prochain créneau le 13 novembre. Sources revues : index officiel https://pixinsight.net/dev/index.php (1.9.6 build 1713 annoncée le 30 octobre déjà couverte ; nouvel éditorial CPD du 30 octobre repéré), historique RC Astro, site et dépôt originaux Distributed WBPP, dépôt et guides TGScripts. Lacune : les liens des articles officiels PixInsight renvoient l'index, pas leurs corps ; ni détails de la 1.9.6 ni contenu de l'éditorial CPD prétendument lus. Méthodes non datées séparées des actualités. Aucun Discord privé, aucune vidéo inaccessible ni test logiciel ou d'image revendiqué. Le retrait Distributed WBPP est un suivi prioritaire, sans édition spéciale automatique. Aucun envoi Discord ni déploiement pour cette veille."
+}
