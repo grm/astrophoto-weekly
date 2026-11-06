@@ -1,5 +1,5 @@
 {
-  "last_issue": 9,
+  "last_issue": 10,
   "topics": {
     "blurxterminator-ml5": {
       "issue": 1,
@@ -672,6 +672,94 @@
       "version": null,
       "source": "https://skyandtelescope.org/astronomy-news/observing-news/this-weeks-sky-at-a-glance-october-30-november-8/",
       "angle": "Early November Taurid fireballs and predawn Venus/Spica/Moon composition"
+    },
+    "ekos-align-diagnosis-nov5": {
+      "issue": 10,
+      "date": "2026-11-06",
+      "status": "development",
+      "version": null,
+      "source": "https://github.com/KDE/kstars/commit/38381302ec160cad48e94512299767539511065c",
+      "angle": "Structured diagnostics for alignment failures"
+    },
+    "ekos-flat-brightness-adu-nov4": {
+      "issue": 10,
+      "date": "2026-11-06",
+      "status": "development",
+      "version": null,
+      "source": "https://github.com/KDE/kstars/commit/12b72c3acd19004d73bc45a6d744fa78a1c90f53",
+      "angle": "ADU target via lightbox brightness at fixed exposure"
+    },
+    "dwarf-draco-sho-japan-nov6": {
+      "issue": 10,
+      "date": "2026-11-06",
+      "status": "announced for February 2027",
+      "version": null,
+      "source": "https://www.kenko-tokina.co.jp/newproducts/dwarfdraco_news202611.html",
+      "angle": "90mm cooled guided SHO smart telescope Japanese announcement"
+    },
+    "indi-wanderer-rotator-pro-v2-nov1": {
+      "issue": 10,
+      "date": "2026-11-06",
+      "status": "development",
+      "version": null,
+      "source": "https://github.com/indilib/indi/commit/6f1551ac54c67e8ea75c9c1195aa7b2622527e83",
+      "angle": "New rotator driver and meaningful device error handling"
+    },
+    "indi-fits-cd-matrix-oct31": {
+      "issue": 10,
+      "date": "2026-11-06",
+      "status": "development",
+      "version": null,
+      "source": "https://github.com/indilib/indi/commit/de3ad58c71d032cbdc4d74e416ba327b9c0f1742",
+      "angle": "FITS astrometric CD matrix metadata"
+    },
+    "sharpcap-4-2-beta15363-feature-tracking": {
+      "issue": 10,
+      "date": "2026-11-06",
+      "status": "beta",
+      "version": "4.2.15363.0",
+      "source": "https://www.sharpcap.co.uk/sharpcap/sharpcap-downloads/sharpcap-4-2-beta",
+      "angle": "November 2 feature tracking scripting API and AstroTiff tags"
+    },
+    "ekos-scheduler-on-until-retry-nov6": {
+      "issue": 10,
+      "date": "2026-11-06",
+      "status": "development",
+      "version": null,
+      "source": "https://github.com/KDE/kstars/commit/965a2082579a3edebafb07a95df9e3271142a7ec",
+      "angle": "Retry jobs with fixed start time after aborted guiding until deadline"
+    },
+    "indi-10micron-meridian-telemetry-nov1": {
+      "issue": 10,
+      "date": "2026-11-06",
+      "status": "development",
+      "version": "1.5",
+      "source": "https://github.com/indilib/indi/commit/ec35042ef02a7a1a6a28e7380d523a508fe69f93",
+      "angle": "Meridian tracking limits and predicted pier side"
+    },
+    "nina-fli-rbi-flat-flood-nov5": {
+      "issue": 10,
+      "date": "2026-11-06",
+      "status": "development",
+      "version": null,
+      "source": "https://github.com/isbeorn/nina/commit/2c3624aad9d5dc55b95f347b63eb38b009d4e2f5",
+      "angle": "FLI RBI flood flush opt-out for flat frames"
+    },
+    "apod-panstarrs-rainbow-meteor-nov3": {
+      "issue": 10,
+      "date": "2026-11-06",
+      "status": "image published Nov 3",
+      "version": null,
+      "source": "https://science.nasa.gov/image-article/apod-2026-november-3-comet-panstarrs-and-rainbow-meteor/",
+      "angle": "April comet and colorful meteor image published in November"
+    },
+    "taurids-mars-jupiter-nov2026": {
+      "issue": 10,
+      "date": "2026-11-06",
+      "status": "upcoming",
+      "version": null,
+      "source": "https://science.nasa.gov/solar-system/skywatching/whats-up-november-2026-skywatching-tips-from-nasa/",
+      "angle": "Northern Taurids November 12 and Mars-Jupiter November 15-16"
     }
   }
 }
