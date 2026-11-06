@@ -24,12 +24,12 @@
     {
       "series": "photoshop-astro",
       "slug": "001",
-      "status": "pending"
+      "status": "sending"
     },
     {
       "series": "siril",
       "slug": "001",
-      "status": "pending"
+      "status": "sending"
     }
   ]
 }
