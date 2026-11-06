@@ -1,0 +1,94 @@
+{
+  "issue": "---\nnumber: 10\ndate: 2026-11-06\ntitle: \"Ekos apprend à se dépanner, les flats prennent le contrôle et les montures parlent\"\ndescription: \"Une semaine très concrète : diagnostic intelligent d'alignement et flats à luminosité pilotée dans Ekos, reprise des séquences, télémétrie INDI, N.I.N.A., SharpCap et un smart telescope SHO.\"\ntags:\n  - automatisation\n  - acquisition\n  - matériel\n  - logiciels\n  - ciel nocturne\nfeatured: true\n---\n\n# 🌌 ASTROPHOTO WEEKLY #010 — 6 novembre 2026\n\nCette semaine, les logiciels d'acquisition ont décidé de s'attaquer à un problème autrement plus pénible qu'un gradient : **les nuits perdues à cause d'un réglage qui ne fonctionne pas**. Ekos commence à expliquer pourquoi son alignement échoue, ses flats savent enfin agir sur la luminosité d'un panneau, et INDI donne davantage de contexte aux montures. Pendant ce temps, un nouveau télescope intelligent promet du SHO sans transformer le salon en salle de câblage.\n\nUne précision importante : plusieurs nouveautés proviennent de **commits de développement** datés du 31 octobre au 6 novembre, pas de versions stables déjà distribuées. On vous dit lesquelles, parce qu'une nuit claire n'est pas un banc de test gratuit.\n\n## 🔥 LE GROS MORCEAU\n\n### 1. Ekos veut expliquer pourquoi le plate solving échoue — 5 novembre\n\nLe message « alignment failed » est parfois aussi informatif qu'un ciel complètement blanc. Le **5 novembre**, le projet KStars/Ekos a intégré un système de **diagnostic des échecs d'alignement**. Il analyse les causes possibles : matériel, configuration, focale et échantillonnage, fichiers d'index astrométriques, horloge, qualité de l'image ou tentatives du solveur. Les pistes sont hiérarchisées et remontent dans les journaux d'Align, via D-Bus et EkosLive.\n\nL'intérêt n'est pas seulement d'afficher une erreur plus jolie : le code prévoit des remédiations automatiques lorsque c'est possible, ainsi que des actions manuelles à confirmer. Un manque d'index ou une mauvaise échelle peuvent donc devenir des problèmes *diagnostiqués*, et non des heures passées à changer le gain au hasard.\n\n**Statut : intégré au code de développement le 5 novembre ; disponibilité dans une version distribuée non confirmée.** À surveiller avant de l'activer sur une installation distante. [Source primaire : commit KStars du 5 novembre](https://github.com/KDE/kstars/commit/38381302ec160cad48e94512299767539511065c).\n\n### 2. Ekos pilote enfin la luminosité des panneaux à flats — 4 novembre\n\nJusqu'ici, la calibration automatique vers une valeur ADU cible faisait principalement varier **le temps de pose**. Le commit du **4 novembre** ajoute une autre voie : avec un panneau à flats réglable et reconnu comme source lumineuse, Ekos peut **conserver une exposition fixe et ajuster la luminosité du panneau** jusqu'à atteindre le niveau voulu.\n\nPourquoi c'est intéressant ? Sur certaines caméras, on veut garder des temps de pose suffisamment longs pour éviter les effets de l'obturateur, du scintillement ou de l'électronique. Faire varier le panneau plutôt que la durée d'exposition simplifie la construction de bibliothèques de flats cohérentes. Le changement est accompagné de tests simulant différents comportements de panneaux, pas seulement une marque particulière.\n\n**Statut : développement KStars/Ekos, pas une promesse de compatibilité universelle avec tous les panneaux.** Vérifiez le pilote INDI et la réponse réelle de votre panneau. [Source primaire : commit du 4 novembre](https://github.com/KDE/kstars/commit/12b72c3acd19004d73bc45a6d744fa78a1c90f53).\n\n## 🧰 MATÉRIEL & GADGETS QUI BRILLENT\n\n### 3. DWARF DRACO SHO : 90 mm, refroidissement et guidage intégrés — annonce du 6 novembre\n\nLe distributeur japonais **Kenko Tokina** a annoncé le **6 novembre** une version SHO du télescope intelligent **DWARF DRACO**, avec une commercialisation annoncée au Japon pour le **19 février 2027**. La fiche met en avant une optique de **90 mm à f/3,8**, **340 mm de focale**, une caméra refroidie, un capteur orientable, un guidage intégré, l'autofocus et des poses pouvant atteindre **300 secondes**.\n\nCe qui retient l'attention n'est pas seulement l'ouverture : le constructeur cherche à intégrer des fonctions habituellement réparties entre plusieurs boîtiers. La promesse SHO est séduisante pour les nébuleuses, mais les résultats réels dépendront de la sensibilité, des filtres, du guidage et de la calibration. **Aucun test terrain indépendant n'est établi par cette annonce.**\n\n**Statut : annonce commerciale du 6 novembre, disponibilité future au Japon ; prix et distribution française non confirmés ici.** [Source primaire : Kenko Tokina](https://www.kenko-tokina.co.jp/newproducts/dwarfdraco_news202611.html).\n\n### 4. INDI : les rotateurs Wanderer gagnent un vrai retour d'erreur — 1er novembre\n\nUn pilote qui reste indéfiniment « occupé » alors que le rotateur n'est plus alimenté, c'est une belle façon de gâcher une mosaïque. Le **1er novembre**, INDI a intégré des adaptations aux firmwares Wanderer : identification du périphérique, prise en compte explicite des réponses **NP** (non alimenté) et **LIMIT** (hors plage), et ajout du pilote **Rotator Pro V2**. Le code vise aussi les modèles Mini et Lite V2 concernés par le firmware d'octobre.\n\nPour l'utilisateur, l'avantage est une erreur exploitable plutôt qu'un faux délai d'attente. Pour une chaîne automatisée, c'est la différence entre « reprendre intelligemment » et « attendre le lever du Soleil ».\n\n**Statut : pilote en développement ; compatibilité à confirmer avec la version du firmware de chaque modèle.** [Source primaire : commit INDI du 1er novembre](https://github.com/indilib/indi/commit/6f1551ac54c67e8ea75c9c1195aa7b2622527e83).\n\n## 🧠 DANS LA MOULINETTE À PIXELS\n\n### 5. INDI enrichit les en-têtes FITS avec une matrice astrométrique — 31 octobre\n\nUne image FITS peut porter beaucoup plus que des pixels : ses métadonnées peuvent aussi expliquer **où elle regarde et comment elle est orientée**. Le **31 octobre**, une contribution INDI a ajouté des termes de matrice **CD** aux informations astrométriques écrites dans les en-têtes FITS, en s'appuyant sur l'échelle et la rotation disponibles.\n\nCela peut faciliter la reprise de données par des outils compatibles WCS, mais attention : **une matrice calculée à partir des informations connues du matériel n'est pas équivalente à une résolution astrométrique indépendante**. Elle ne corrige pas magiquement un mauvais pointage ni la distorsion optique. C'est une amélioration d'interopérabilité à tester sur des FITS de terrain.\n\n**Statut : changement intégré au code INDI, disponibilité selon la version installée.** [Source primaire : contribution INDI du 31 octobre](https://github.com/indilib/indi/commit/de3ad58c71d032cbdc4d74e416ba327b9c0f1742).\n\n### 6. SharpCap 4.2 bêta : une API de plus pour le suivi de détail — 2 novembre\n\nLa bêta **4.2.15363.0**, publiée le **2 novembre**, ajoute un accès par script au **facteur de correction du Feature Tracking**, améliore l'écriture des tags TIFF en mode **AstroTiff** et apporte des corrections. La nouveauté API intéressera surtout les amateurs de Soleil, de Lune et de planétaire qui automatisent leurs ajustements pendant les acquisitions.\n\nCe n'est pas une refonte du live stacking : la mise à jour est plus modeste que les évolutions de CLAHE et d'aperçu rapide déjà abordées les semaines précédentes. Mais c'est une brique utile pour les workflows pilotés par script.\n\n**Statut : bêta, datée du 2 novembre ; la version stable 4.1 peut cohabiter avec la bêta.** [Source primaire : notes SharpCap 4.2 bêta](https://www.sharpcap.co.uk/sharpcap/sharpcap-downloads/sharpcap-4-2-beta).\n\n## 🛰️ SOUS LES ÉTOILES\n\n### 7. Ekos sait mieux reprendre un travail interrompu — 6 novembre\n\nUne séquence programmée « à partir de 19 h, jusqu'à 20 h 50 » pouvait échouer à cause du guidage puis ne **jamais repartir**, parce que son heure de démarrage était considérée comme dépassée. Le correctif du **6 novembre** distingue désormais une tâche qui **a effectivement démarré à l'heure** d'une tâche qui a raté son créneau : la première peut être retentée jusqu'à son heure de fin, selon les paramètres de gestion des erreurs.\n\nLe même cycle de développement améliore la prise en compte des conditions d'achèvement des mosaïques et la simulation des tâches à horaires imposés. Pour une station autonome, ces petits détails de logique valent parfois plus qu'un nouveau bouton spectaculaire.\n\n**Statut : code de développement KStars/Ekos, avec tests de régression ; vérifier la version avant usage en production.** [Source primaire : correction du 6 novembre](https://github.com/KDE/kstars/commit/965a2082579a3edebafb07a95df9e3271142a7ec).\n\n### 8. 10Micron sous INDI : limites méridiennes et fin de suivi visibles — 1er novembre\n\nLe pilote **LX200 10Micron 1.5** reçoit une télémétrie supplémentaire : **limites de retournement et de suivi**, **côté méridien autorisé**, **temps restant avant la fin du suivi** et **côté du pilier prévu pour la cible**. Le code lit les réglages réels de la monture, les expose aux clients et contrôle certaines incohérences avant écriture.\n\nC'est particulièrement utile pour les séquences longues : on peut mieux anticiper un retournement, un arrêt de suivi ou une cible qui arrive du mauvais côté. Cela ne remplace toutefois pas les mécanismes matériels de sécurité.\n\n**Statut : changement INDI du 1er novembre, pilote 1.5 dans le dépôt ; disponibilité dépendante du paquet installé.** [Source primaire : commit INDI](https://github.com/indilib/indi/commit/ec35042ef02a7a1a6a28e7380d523a508fe69f93).\n\n## 🔧 LA TECHNIQUE QUI VAUT LE DÉTOUR\n\n### 9. N.I.N.A. et le RBI : des flats sans « flood » systématique — 5 novembre\n\nSur certaines caméras **FLI**, une procédure de *flood/flush* peut aider à gérer le **Residual Bulk Image** (RBI), cette mémoire résiduelle du capteur qui peut contaminer les poses suivantes. Le **5 novembre**, N.I.N.A. a ajouté une option spécifique permettant de **ne pas appliquer systématiquement cette procédure aux flats**.\n\nPourquoi séparer les flats des lights ? Parce que le bon compromis n'est pas toujours identique selon le type de pose et le capteur. Le réglage donne davantage de contrôle sans demander de renoncer au traitement RBI pour le reste de la session. En revanche, il ne concerne pas toutes les caméras du marché.\n\n**Statut : contribution au code N.I.N.A., ciblée sur les caméras FLI compatibles ; pas une nouvelle fonction stable annoncée pour tous.** [Source primaire : commit du 5 novembre](https://github.com/isbeorn/nina/commit/2c3624aad9d5dc55b95f347b63eb38b009d4e2f5).\n\n## 🖼️ L’IMAGE QUI NOUS A FAIT LEVER UN SOURCIL\n\n### 10. Une comète, un météore arc-en-ciel et une excellente leçon de perspective — 3 novembre\n\nL'[APOD du 3 novembre](https://science.nasa.gov/image-article/apod-2026-november-3-comet-panstarrs-and-rainbow-meteor/) présente une photographie d'**Eddy Metais** réalisée à **Hautacam**, en France, en **avril 2026**. On y voit la comète **C/2025 R3 (PanSTARRS)**, ses queues de poussière et d'ions, et un météore aux couleurs étonnantes traversant le premier plan.\n\nLa photo a été mise en avant cette semaine, mais **la prise de vue date d'avril** : nuance essentielle pour ne pas faire passer une image d'archive pour une nouvelle apparition de la comète. Et non, le météore n'est pas forcément un morceau de cette comète : leur proximité sur l'image est d'abord une question de perspective.\n\nC'est notre choix de la semaine parce qu'elle conjugue spectacle, composition et pédagogie. Une belle démonstration qu'en astrophoto, le « hasard » se prépare souvent avec beaucoup de patience. [Source primaire : NASA APOD, 3 novembre](https://science.nasa.gov/image-article/apod-2026-november-3-comet-panstarrs-and-rainbow-meteor/).\n\n## 🌑 À SHOOTER BIENTÔT\n\n### 11. Les Taurides, puis Mars et Jupiter : deux rendez-vous photographiques — 6 au 16 novembre\n\nLa **NASA** annonce le maximum des **Taurides du Nord vers le 12 novembre**. Le taux moyen reste faible — environ **cinq météores par heure dans de bonnes conditions** — mais les bolides lumineux sont le vrai attrait. Un boîtier grand-angle sur trépied, des poses répétées et un horizon dégagé sont souvent plus adaptés qu'une longue focale : les météores ne respectent pas votre cadrage, c'est leur hobby.\n\nAutre opportunité : les **15 et 16 novembre avant l'aube**, **Mars et Jupiter** apparaîtront séparées d'environ **1,2°**. Une scène accessible au téléobjectif avec un peu de contexte paysager, et intéressante à suivre plusieurs matins pour montrer le rapprochement apparent. Vérifiez les horaires et la hauteur au-dessus de votre horizon local.\n\n**Statut : prévisions d'observation NASA publiées le 2 novembre ; météo et visibilité locales déterminantes.** [Source primaire : NASA, ciel de novembre 2026](https://science.nasa.gov/solar-system/skywatching/whats-up-november-2026-skywatching-tips-from-nasa/).\n\n## 👀 ON GARDE UN ŒIL DESSUS\n\nLe fil rouge est clair : **l'observatoire devient plus capable d'expliquer ses erreurs et de s'en remettre**. Diagnostics, panneaux à flats pilotés, informations méridiennes et reprise après échec progressent dans les dépôts. Mais un commit récent n'est pas une mise à jour stable : attendez les versions publiées, faites une sauvegarde des profils et testez vos séquences avant de laisser le toit et le café se débrouiller seuls.\n\n## 🧪 LE TRUC À TESTER CE WEEK-END\n\nSans installer la moindre nightly, choisissez une séquence de flats existante et notez pour chaque filtre **temps de pose, ADU médian, luminosité du panneau et température**. Rejouez-la avec les mêmes paramètres, puis comparez la dispersion des niveaux et la qualité de calibration. C'est le protocole idéal pour savoir si une future régulation de luminosité vous apportera réellement quelque chose. Les promesses sont intéressantes ; les mesures sont meilleures.\n\n## 🥤 LE MOT DE LA FIN\n\nCette semaine, le vrai progrès n'est pas de gagner 0,02 seconde d'arc sur une capture d'écran. C'est de pouvoir rentrer dormir en sachant que, si l'astrométrie se plante, le logiciel saura au moins **pourquoi**. Reste à lui apprendre à dissiper les nuages. Là, même l'IA demande un délai.\n",
+  "digest": "🌌 **AstroPhoto Weekly #010 — 6 novembre 2026**\n\nCette semaine, les logiciels apprennent à réparer les nuits plutôt qu'à seulement les rater. Le RMS approuve (prudemment).\n\n🧭 **Ekos** prépare un diagnostic des échecs de plate solving : enfin plus utile que « ça n'a pas marché ».\n💡 **Flats** : Ekos ajuste la luminosité du panneau pour viser l'ADU sans changer l'exposition.\n🔭 **DWARF DRACO SHO** : 90 mm f/3,8, refroidissement et guidage intégrés — annoncé pour 2027 au Japon.\n🛰️ **INDI / 10Micron** : limites méridiennes, côté du pilier et fin de suivi deviennent visibles.\n🧠 **N.I.N.A. et SharpCap** : gestion du RBI sur les flats et nouvelles possibilités de script.\n☄️ **À shooter** : Taurides du Nord vers le 12 novembre, puis Mars et Jupiter à 1,2° les 15–16.\n\nPlusieurs nouveautés sont encore en développement : on garde les nuits claires pour photographier, pas pour déboguer.\n\n👉 **Lire l’édition complète : [URL]**",
+  "topics": {
+    "ekos-align-diagnosis-nov5": {
+      "issue": 10,
+      "date": "2026-11-06",
+      "status": "development",
+      "version": null,
+      "source": "https://github.com/KDE/kstars/commit/38381302ec160cad48e94512299767539511065c",
+      "angle": "Structured diagnostics for alignment failures"
+    },
+    "ekos-flat-brightness-adu-nov4": {
+      "issue": 10,
+      "date": "2026-11-06",
+      "status": "development",
+      "version": null,
+      "source": "https://github.com/KDE/kstars/commit/12b72c3acd19004d73bc45a6d744fa78a1c90f53",
+      "angle": "ADU target via lightbox brightness at fixed exposure"
+    },
+    "dwarf-draco-sho-japan-nov6": {
+      "issue": 10,
+      "date": "2026-11-06",
+      "status": "announced for February 2027",
+      "version": null,
+      "source": "https://www.kenko-tokina.co.jp/newproducts/dwarfdraco_news202611.html",
+      "angle": "90mm cooled guided SHO smart telescope Japanese announcement"
+    },
+    "indi-wanderer-rotator-pro-v2-nov1": {
+      "issue": 10,
+      "date": "2026-11-06",
+      "status": "development",
+      "version": null,
+      "source": "https://github.com/indilib/indi/commit/6f1551ac54c67e8ea75c9c1195aa7b2622527e83",
+      "angle": "New rotator driver and meaningful device error handling"
+    },
+    "indi-fits-cd-matrix-oct31": {
+      "issue": 10,
+      "date": "2026-11-06",
+      "status": "development",
+      "version": null,
+      "source": "https://github.com/indilib/indi/commit/de3ad58c71d032cbdc4d74e416ba327b9c0f1742",
+      "angle": "FITS astrometric CD matrix metadata"
+    },
+    "sharpcap-4-2-beta15363-feature-tracking": {
+      "issue": 10,
+      "date": "2026-11-06",
+      "status": "beta",
+      "version": "4.2.15363.0",
+      "source": "https://www.sharpcap.co.uk/sharpcap/sharpcap-downloads/sharpcap-4-2-beta",
+      "angle": "November 2 feature tracking scripting API and AstroTiff tags"
+    },
+    "ekos-scheduler-on-until-retry-nov6": {
+      "issue": 10,
+      "date": "2026-11-06",
+      "status": "development",
+      "version": null,
+      "source": "https://github.com/KDE/kstars/commit/965a2082579a3edebafb07a95df9e3271142a7ec",
+      "angle": "Retry jobs with fixed start time after aborted guiding until deadline"
+    },
+    "indi-10micron-meridian-telemetry-nov1": {
+      "issue": 10,
+      "date": "2026-11-06",
+      "status": "development",
+      "version": "1.5",
+      "source": "https://github.com/indilib/indi/commit/ec35042ef02a7a1a6a28e7380d523a508fe69f93",
+      "angle": "Meridian tracking limits and predicted pier side"
+    },
+    "nina-fli-rbi-flat-flood-nov5": {
+      "issue": 10,
+      "date": "2026-11-06",
+      "status": "development",
+      "version": null,
+      "source": "https://github.com/isbeorn/nina/commit/2c3624aad9d5dc55b95f347b63eb38b009d4e2f5",
+      "angle": "FLI RBI flood flush opt-out for flat frames"
+    },
+    "apod-panstarrs-rainbow-meteor-nov3": {
+      "issue": 10,
+      "date": "2026-11-06",
+      "status": "image published Nov 3",
+      "version": null,
+      "source": "https://science.nasa.gov/image-article/apod-2026-november-3-comet-panstarrs-and-rainbow-meteor/",
+      "angle": "April comet and colorful meteor image published in November"
+    },
+    "taurids-mars-jupiter-nov2026": {
+      "issue": 10,
+      "date": "2026-11-06",
+      "status": "upcoming",
+      "version": null,
+      "source": "https://science.nasa.gov/solar-system/skywatching/whats-up-november-2026-skywatching-tips-from-nasa/",
+      "angle": "Northern Taurids November 12 and Mars-Jupiter November 15-16"
+    }
+  }
+}
