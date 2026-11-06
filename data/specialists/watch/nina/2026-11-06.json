@@ -1,0 +1,56 @@
+{
+  "series": "nina",
+  "checked_at": "2026-11-06",
+  "candidates": [
+    {
+      "id": "target-scheduler-51100-integrated-planning",
+      "title": "5 novembre 2026 — Target Scheduler 5.11.0.0 : planification intégrée, N.I.N.A. 3.3 nightly uniquement",
+      "source": "https://github.com/tcpalmer/nina.plugin.targetscheduler/releases/tag/v5.11.0.0",
+      "source_date": "2026-11-05",
+      "discovered_at": "2026-11-06",
+      "kind": "actualite",
+      "status": "nina-33-nightly-only",
+      "version": "5.11.0.0",
+      "angle": "Visualiser les nuits disponibles avec les règles du planificateur : horizon, crépuscule et évitement de la Lune. Pour les utilisateurs testant la 3.3 ; cela ne justifie pas de migrer une installation stable.",
+      "verification": "Release originale et notes auteur concordantes : 5 novembre. https://tcpalmer.github.io/nina-scheduler/release.html : intégration de Target Planning et correction d'affectation des symboles. Guide https://tcpalmer.github.io/nina-scheduler/target-planner.html lu : exploration manuelle ou d'une cible existante, sans enregistrer les paramètres exploratoires dans sa fiche. Manifeste officiel minimum 3.3.0.1037. GitHub ne marque pas la release comme prerelease, mais N.I.N.A. 3.3 reste nightly. Changelog main sur branche 5.9 distincte. Angle nouveau après le tri/rejet 5.10.4.0 du pilote."
+    },
+    {
+      "id": "target-scheduler-5961-profile-loading",
+      "title": "25 octobre 2026 — Target Scheduler 5.9.6.1 : corriger le blocage de chargement des profils, branche N.I.N.A. 3.2",
+      "source": "https://github.com/tcpalmer/nina.plugin.targetscheduler/releases/tag/v5.9.6.1",
+      "source_date": "2026-10-25",
+      "discovered_at": "2026-11-06",
+      "kind": "actualite",
+      "status": "released-nina-32-branch",
+      "version": "5.9.6.1",
+      "angle": "Une maintenance pour ceux dont un profil se fige au chargement : suivre sa branche compatible plutôt que le numéro le plus élevé.",
+      "verification": "Publication GitHub et CHANGELOG.md original : 25 octobre 2026. Manifeste officiel minimum N.I.N.A. 3.2.0.9001. Même correctif porté le 25 octobre dans la 5.10.4.1 pour 3.3 nightly ; pas deux fonctions nouvelles. Non couvert dans 001. Dans les quatorze jours de la veille ; à reclasser en rattrapage au prochain créneau."
+    },
+    {
+      "id": "perihelion-11018-framing-nina33",
+      "title": "6 novembre 2026 — Perihelion 1.1.0.18 : réparer le cadrage sous N.I.N.A. 3.3 nightly",
+      "source": "https://github.com/OryxAstro/perihelion/releases/tag/v1.1.0.18",
+      "source_date": "2026-11-06",
+      "discovered_at": "2026-11-06",
+      "kind": "actualite",
+      "status": "released-plugin-nina-32-and-33-nightly",
+      "version": "1.1.0.18",
+      "angle": "Pour les comètes et astéroïdes : corriger le plantage de Frame et l'accès au fond de ciel HIPS2FITS sous 3.3. Le cadrage ne devrait pas être la partie la plus mouvementée d'une soirée cométaire.",
+      "verification": "Release originale et CHANGELOG.md datent tous deux la 1.1.0.18 du 6 novembre ; version présente dans le catalogue officiel, minimum 3.2.0.9001. L'auteur dit avoir testé panneau, Frame et Framing Composer sous 3.2.0.9001 et 3.3.0.1069, mais pas Slew and Center ni Determine Rotation sous 3.3. Ce sont ses essais, pas les nôtres. La 1.1.0.17 corrigeait Imaging : changelog daté du 4 novembre, publication GitHub du 5 novembre UTC, divergence conservée sans fausse date unique. PINS non affecté par ces correctifs Windows."
+    },
+    {
+      "id": "chatstronomy-01034-observation-overlay",
+      "title": "23 octobre 2026 — Chatstronomy 0.1.0.34 : état d'observation pour les surimpressions de caméra",
+      "source": "https://github.com/theatrus/chatstronomy-nina-plugin/releases/tag/v0.1.0.34",
+      "source_date": "2026-10-23",
+      "discovered_at": "2026-11-06",
+      "kind": "actualite",
+      "status": "author-release-official-catalog-lags",
+      "version": "0.1.0.34",
+      "angle": "Partager en lecture seule visites de cibles, température et nombre confirmé de poses LIGHT sauvegardées avec une surimpression compatible. Distinguer la release auteur du catalogue officiel.",
+      "verification": "Release du 23 octobre lue : N.I.N.A. 3.2.0.9001 minimum, surimpressions exigeant une caméra compatible et Hub 0.4.13 ou ultérieur ; runtime 0.4.13 inclus. Partage soumis aux permissions locales, sans activer les commandes matérielles. Catalogue officiel contrôlé : 0.1.0.31 au plus, contre 0.1.0.34 publiée par l'auteur. Présentation du 11 septembre et README lus, date ancienne non utilisée comme sortie de 0.1.0.34. À la borne des quatorze jours ; à reclasser en rattrapage si retenu ultérieurement."
+    }
+  ],
+  "decision": "off-week",
+  "coverage_notes": "Passe N.I.N.A. complète et indépendante, commencée après PixInsight. Édition et soumission 001, historique propre, chemins et veilles inspectés ; aucune veille antérieure datée. Au 6 novembre 2026 à Paris : semaine hors créneau, ancrage 30 octobre, prochain créneau 13 novembre. Cœur : https://nighttime-imaging.eu/download/ et ses trois changelogs lus ; toujours 3.2 stable (3.2.0.9001), 3.2 HF1 RC2 (3.2.1.3002), 3.3 nightly #69 (3.3.0.1069), déjà recensés. Aucune date de sortie vérifiable dans ces changelogs, aucun nouvel événement daté inventé. Plugins étudiés indépendamment : Target Scheduler (notes, releases, branche main 5.9, guide de planification et deux manifestes) ; Hocus Focus (guide et releases, dernière 4.0.0.21 du 16 octobre, corps vide, pas de nouveauté datée prouvée ; ressource autofocus déjà couverte) ; Perihelion (releases, changelog, README, manifeste) ; Chatstronomy (auteur, README, releases et manifeste officiel) ; Sequencer+ (changelog et releases, dernière 3.29.0.12 du 10 mai 2026 ; page de documentation web sans texte lisible, pas d'actualité récente vérifiée) ; Orbuculum (manifeste et release 2.0.0.2 du 4 juin 2025, pas de nouveauté récente). Annuaire tiers utilisé seulement pour découvrir des pistes. Deux pages HTML de releases GitHub inaccessibles au navigateur de recherche, contenus et dates effectivement lus via l'API GitHub. Le chemin registry/manifest.json de Chatstronomy ne répond pas : aucune affirmation sur la version actuellement offerte par son flux auteur. Aucun Discord privé consulté, vidéo visionnée ou test logiciel/matériel effectué. Aucun déploiement, envoi Discord ni nouvelle soumission pour cette veille."
+}
