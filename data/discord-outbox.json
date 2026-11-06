@@ -24,12 +24,16 @@
     {
       "series": "photoshop-astro",
       "slug": "001",
-      "status": "sending"
+      "status": "sent",
+      "message_id": "1568275181166661732",
+      "channel_id": "1568275181166661732"
     },
     {
       "series": "siril",
       "slug": "001",
-      "status": "sending"
+      "status": "sent",
+      "message_id": "1568275182789984296",
+      "channel_id": "1568275182789984296"
     }
   ]
 }
