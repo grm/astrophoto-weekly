@@ -1,0 +1,56 @@
+{
+  "series": "photoshop-astro",
+  "checked_at": "2026-11-13",
+  "candidates": [
+    {
+      "id": "adobe-acr19-nonraw-filter-denoise",
+      "title": "Camera Raw 19.0 : Denoise arrive sur les TIFF et dans le filtre Photoshop",
+      "source": "https://helpx.adobe.com/camera-raw/desktop/whats-new/release-notes.html",
+      "source_date": null,
+      "discovered_at": "2026-11-13",
+      "kind": "ressource-a-decouvrir",
+      "status": "released-release-day-unconfirmed",
+      "version": "19.0",
+      "angle": "Suivi matériel du sujet du pilote : un master du ciel profond exporté en TIFF n'est plus exclu de Denoise pour ce seul format avec Camera Raw 19.0. Examiner les étoiles et les structures faibles ; aucun bénéfice astro mesuré ici.",
+      "verification": "Notes de version de novembre, guide Enhance et annonce officielle du Community Manager Adobe lus : https://community.adobe.com/announcements-561/adobe-camera-raw-19-0-is-here-motion-and-streak-glow-virtual-copies-and-batch-generative-remove-1653739 datée du 10 novembre 2026 à 14 h UTC. C'est la date de l'annonce, pas une preuve du jour initial de distribution ; source_date reste null, hors actualités de sortie au jour près. TIFF/PSD/PSB et filtre Camera Raw explicitement pris en charge ; la documentation précise que sur les non-RAW, le bruit de couleur est réduit même si Amount=0, et que Denoise ne se combine pas à Raw Details/Super Resolution dans la même passe. L'ancienne page différences Camera Raw/filtre, toujours datée de 2023, dit encore l'inverse : privilégier les notes 19.0 et le guide actualisé. Nouveau sujet/angle après adobe-camera-raw-vs-filter-reference de 001. Débruitage assisté par IA, à distinguer de Generative Remove ; pas de test ni promesse de fidélité parfaite."
+    },
+    {
+      "id": "photoshop28-astro-stack-loading-fixes",
+      "title": "Photoshop 28.0 : corrections du chargement des piles et des RAW débruités",
+      "source": "https://helpx.adobe.com/photoshop/desktop/whats-new/photoshop-on-desktop-release-notes.html",
+      "source_date": null,
+      "discovered_at": "2026-11-13",
+      "kind": "ressource-a-decouvrir",
+      "status": "released-release-day-unconfirmed",
+      "version": "28.0",
+      "angle": "Une piste concrète pour préparer des images astro : corriger Load Files into Stack sous Windows non anglophone et l'ouverture de RAW débruités depuis Bridge sur Mac.",
+      "verification": "Notes originales de novembre lues : correctif Windows de l'erreur Cannot convert de Load Files into Stack ; correctif Mac de l'ouverture des RAW retouchés via Camera Raw/Bridge avec Denoise. Bénéfice astro documenté par la page Adobe des piles d'images, qui cite explicitement les images astrophotographiques, pas par une performance inventée. Les notes donnent novembre 2026 et une actualisation le 10 novembre, sans jour de sortie établi : ne pas dater la release du 10. Les améliorations PSD/PSB sont annoncées par Adobe, pas mesurées ici. Relight, restylage et recomposition générative exclus de la sélection de traitement fidèle ; ni ajout d'étoiles ni éclairage inventé assimilés à une correction astronomique."
+    },
+    {
+      "id": "rcastro-2611-photoshop-licensing",
+      "title": "6 novembre 2026 — RC Astro 2.6.11 publiée : licences plus accessibles derrière un proxy",
+      "source": "https://www.rc-astro.com/version-history/",
+      "source_date": "2026-11-06",
+      "discovered_at": "2026-11-13",
+      "kind": "actualite",
+      "status": "released",
+      "version": "2.6.11",
+      "angle": "Pour les utilisateurs des extensions astro commerciales Photoshop : lever certains blocages de connexion à la licence, sans confondre maintenance et nouveau traitement du ciel.",
+      "verification": "Historique original relu : date effective du 6 novembre désormais affichée, plateformes Photoshop Astro et Photoshop BSXT incluses. L'amélioration vise les proxys et l'inspection des connexions sécurisées, avec diagnostic plus explicite. Les suppressions de réparation des permissions et d'ancien updater citées dans l'entrée sont spécifiques à PixInsight, pas à Photoshop. La page StarXTerminator annonce Photoshop CC ou ultérieur, macOS 12 minimum ou Windows 10 22H2 et CPU x64 avec instructions requises ; ce n'est pas une validation indépendante de chaque combinaison avec Photoshop 28.0. Nouvelle version après la 2.6.10 du pilote ; aucun nouveau modèle IA annoncé."
+    },
+    {
+      "id": "adobe-smart-object-stacking-astro-reference",
+      "title": "Empiler les pixels n'est pas regrouper les vignettes dans Camera Raw",
+      "source": "https://helpx.adobe.com/photoshop/desktop/create-manage-layers/create-layer-compositions/create-and-process-image-stacks.html",
+      "source_date": null,
+      "discovered_at": "2026-10-30",
+      "kind": "ressource-a-decouvrir",
+      "status": "documented-resource",
+      "version": null,
+      "angle": "Clarifier les mots pour les séries de ciel nocturne : un groupe de photos dans Camera Raw organise la sélection ; un mode Mean/Median d'objet dynamique Photoshop combine les images.",
+      "verification": "Ressource déjà repérée le 30 octobre, non publiée dans 001, relue au 13 novembre. Adobe décrit chargement en calques, alignement puis objet dynamique Mean/Median et cite l'usage astrophotographique. Le nouveau guide Camera Raw https://helpx.adobe.com/camera-raw/desktop/get-started/overview-and-setup/group-photos-into-stacks.html décrit seulement le regroupement sous une vignette. Aucun gain de signal/bruit ne doit lui être attribué. Pour les paysages nocturnes, étoiles et premier plan fixe imposent d'examiner séparément l'alignement ; ce conseil est une conséquence pratique, pas un automatisme garanti. Pas de date d'introduction vérifiée pour la fonction Photoshop ; aucune pile réalisée."
+    }
+  ],
+  "decision": "off-week",
+  "coverage_notes": "Passe Photoshop astro complète et distincte, commencée après Siril. Archives finales 001 et soumission 001, historique propre et veille du 30 octobre examinés ; aucune nouvelle soumission ni veille du jour préexistante. Ancrage 6 novembre : veille intermédiaire le 13 novembre, prochain créneau 20 novembre. Sources Adobe : nouveautés et notes Photoshop 28.0 et Camera Raw 19.0, annonce de disponibilité 19.0 par l'équipe Adobe, installateur 19.0, guide Denoise actualisé, ancienne page différences Camera Raw/filtre, guide de groupes Camera Raw, piles d'objets dynamiques, Photomerge. Sources astro originales : historique RC Astro et page StarXTerminator ; ProDigital Astronomy Tools (v1_6_2 annoncée, aucune nouvelle date de sortie vérifiée, actions commerciales Photoshop pas Elements) ; workflow AstroBackyard du 2 avril 2026/actualisé 5 octobre et tutoriel Iris du 2 mai 2023/actualisé 10 août 2026, calques/masques et master d'exemple consultés, pas leurs vidéos ou guides payants ; index de tutoriels Lonely Speck, pas de nouveau tutoriel astro daté corroboré. Les ressources anciennes ne deviennent pas des actualités de novembre. Le jour exact des sorties Adobe reste non établi ; ni dates d'actualisation des pages ni date de l'annonce du 10 novembre ne s'y substituent. Le changement Denoise est une évolution majeure à expliquer avec sa version, sans recycler le sujet du pilote à l'identique. Generative Remove, Relight et recomposition traités comme altérations/composites lorsqu'ils modifient le contenu ou l'éclairage ; exclus des recommandations de traitement fidèle. Aucun test d'image, benchmark, vérification de plugin en exécution ni espace privé consulté. Pas de déploiement, message Discord, correction directe d'une édition antérieure ou nouvelle soumission pendant cette veille."
+}
