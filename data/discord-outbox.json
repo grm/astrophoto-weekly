@@ -59,7 +59,9 @@
     {
       "series": "general",
       "slug": "011",
-      "status": "sending"
+      "status": "sent",
+      "message_id": "1570831188778557441",
+      "channel_id": "1546851276103614514"
     }
   ]
 }
