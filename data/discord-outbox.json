@@ -45,7 +45,9 @@
     {
       "series": "pixinsight",
       "slug": "002",
-      "status": "sending"
+      "status": "sent",
+      "message_id": "1570783014156374126",
+      "channel_id": "1570783014156374126"
     }
   ]
 }
