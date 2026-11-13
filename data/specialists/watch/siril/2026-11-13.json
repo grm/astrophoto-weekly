@@ -1,0 +1,56 @@
+{
+  "series": "siril",
+  "checked_at": "2026-11-13",
+  "candidates": [
+    {
+      "id": "rcastro-2611-siril-cli-licensing",
+      "title": "6 novembre 2026 — RC Astro 2.6.11 publiée : les licences passent mieux les proxys",
+      "source": "https://www.rc-astro.com/version-history/",
+      "source_date": "2026-11-06",
+      "discovered_at": "2026-11-13",
+      "kind": "actualite",
+      "status": "released",
+      "version": "2.6.11",
+      "angle": "Pour les utilisateurs des outils commerciaux RC Astro appelés depuis Siril : accès aux licences sur les réseaux avec proxy ou inspection TLS, plutôt qu'une erreur de connexion générique.",
+      "verification": "Historique original relu : 2.6.11 datée du 6 novembre, plateforme CLI incluse. L'annonce Siril https://siril.org/2026/06/rc-astro-tools-available-in-siril/ a été relue : trois scripts utilisent la CLI pour BlurXTerminator, NoiseXTerminator et StarXTerminator. C'est une intégration annoncée le 26 juin 2026, pas une nouveauté de novembre. Les produits exigent leurs licences ; ne pas présenter le script de liaison comme donnant les modèles gratuitement. Les changements CPD spécifiques à PixInsight ne sont pas des changements Siril. Aucun nouveau modèle IA ni gain de traitement vérifié."
+    },
+    {
+      "id": "rolandet-osc-low-disk-development-resource",
+      "title": "Empilement multi-nuit : suivre le mode économe en disque, encore marqué Unreleased",
+      "source": "https://github.com/rolandet/siril-scripts/blob/main/CHANGELOG.md",
+      "source_date": null,
+      "discovered_at": "2026-11-13",
+      "kind": "ressource-a-decouvrir",
+      "status": "development-unreleased",
+      "version": "3.0.2 development",
+      "angle": "Une piste pour les mosaïques couleur : traiter les panneaux et nettoyer les intermédiaires propres à l'exécution, avec reprise et réserve d'espace. Le disque n'a pas besoin d'avaler toutes les nuits d'un seul coup.",
+      "verification": "CHANGELOG original lu : section Unreleased, titre de développement 3.0.2, mode Low disk usage pour les mosaïques OSC sous Siril 1.4.4. Nettoyage des séquences temporaires après validation, empreintes et points de reprise, estimation de l'espace et choix GZIP2 sans perte décrits. Le README annonce encore 3.0 et Siril 1.4 minimum : ne pas uniformiser ces numéros ni déduire la compatibilité complète de la branche de développement. API GitHub Releases : aucune release. Date de publication non confirmée, ne pas convertir un commit en sortie. Lecture documentaire seulement ; licence et copie réellement distribuée à contrôler avant recommandation d'installation."
+    },
+    {
+      "id": "svenesis-blink-comparator-resource",
+      "title": "Svenesis Blink Comparator : regarder les brutes avant de les écarter",
+      "source": "https://github.com/sramuschkat/Siril-Scripts/blob/main/Svenesis-BlinkComparator.py",
+      "source_date": null,
+      "discovered_at": "2026-11-13",
+      "kind": "ressource-a-decouvrir",
+      "status": "source-documentation-version-gap",
+      "version": "1.3.4 source; 1.2.8 guide",
+      "angle": "Comparer visuellement une série FITS et ses mesures de qualité avant l'empilement. Les actions sur les fichiers demandent de vérifier la version exacte, plutôt que de suivre un vieux guide au pied de la lettre.",
+      "verification": "README, en-tête du code et Instructions/Svenesis-BlinkComparator-Instructions.md lus. Dépôt sous GPL-3.0-or-later ; le code se déclare 1.3.4 et travaille sur les fichiers en place, tandis que le guide se présente en 1.2.8, décrit Siril ≥1.4.0, une séquence temporaire et un déplacement des rejets à la fermeture. Cette divergence interdit de présenter ce parcours comme garanti dans 1.3.4. Aucune release GitHub datée trouvée. Les relations simplifiées entre métriques présentes dans le guide ne sont pas reprises. Pas de comparaison d'images ni essai de déplacement réalisé."
+    },
+    {
+      "id": "siril-asteroid-hunting-official-resource",
+      "title": "Astéroïdes faibles : empiler sur le mouvement prévu plutôt que sur les étoiles",
+      "source": "https://siril.org/tutorials/asteroid_hunting/",
+      "source_date": null,
+      "discovered_at": "2026-11-13",
+      "kind": "ressource-a-decouvrir",
+      "status": "documented-resource",
+      "version": "Siril >=1.4",
+      "angle": "Une méthode documentée pour retrouver un objet connu trop faible sur chaque brute, à partir de son éphéméride et d'un empilement recalé sur son déplacement.",
+      "verification": "Guide original de Cécile Melis lu : séquence calibrée, astrométrie, interrogation IMCCE puis recalage Comet/Asteroid sur deux positions et empilement. Les données d'exemple datent du 29 janvier 2022 ; ce n'est pas la date de publication du tutoriel. Publication non confirmée malgré le badge NEW de l'index. Le guide distingue la situation idéale sans rééchantillonnage des séries avec retournement au méridien ou distorsion, qui demandent un autre parcours. Il s'agit ici de retrouver des objets connus, pas d'une découverte par la rédaction. Aucun résultat reproduit."
+    }
+  ],
+  "decision": "off-week",
+  "coverage_notes": "Passe Siril complète et indépendante, achevée avant la recherche Photoshop astro. Contrat et configuration relus ; édition finale 001 du 6 novembre, soumission 001, historique propre et veille du 30 octobre examinés. Aucun autre numéro ni soumission en attente dans cette série. Au 13 novembre 2026 à Paris : sept jours après l'ancrage du 6 novembre, hors fenêtre ordinaire ; prochain créneau le 20 novembre. Sources officielles : actualités, téléchargement, notes complètes de 1.4.5 et index des tutoriels, liste Python stable, annonce d'intégration RC Astro, article du livre. Toujours 1.4.5 stable du 28 octobre, déjà couverte ; pas de nouvelle version stable vérifiée. Livre : l'article du 17 octobre indique encore allemand/espagnol prévus en novembre, sans attester leur sortie ; pas d'actualité nouvelle déduite. Mosaïques et débogage déjà couverts ne sont pas recyclés. Dépôts originaux indépendamment examinés : rolandet (README/changelog, Releases vide), Svenesis (README, guide Blink et en-tête du script, Releases vide), Naztronomy (README, calibration multi-session et mosaïques ; dernière release GitHub v2.0.0 du 6 novembre 2025, ne pas la dater de 2026). GitLab Releases ne rend aucun texte et le dépôt officiel siril-scripts seulement des métadonnées : pas de changements de code prétendument lus. Liste Python stable identifie explicitement RC Astro et SyQon comme payants. Aucun Discord privé ou vidéo consulté, aucun test de logiciel, calibration ou empilement réalisé. Revérifier candidats, distribution et dates au prochain créneau ; une version source non datée n'est pas une actualité datée. Aucun envoi Discord, déploiement ni nouvelle soumission aujourd'hui."
+}
