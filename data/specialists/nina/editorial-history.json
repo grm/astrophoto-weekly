@@ -1,5 +1,5 @@
 {
-  "last_issue": 1,
+  "last_issue": 2,
   "topics": {
     "nina-32hf1rc2-acquisition-branch-review": {
       "issue": 1,
@@ -24,6 +24,30 @@
       "version": null,
       "source": "https://ghilios.github.io/hocus-focus/overview/autofocus/",
       "angle": "Undated original guide; distinguish validation and fitting; do not attribute features to October 16 release"
+    },
+    "qsm-1432-valid-frame-accounting": {
+      "issue": 2,
+      "date": "2026-11-13",
+      "status": "author-release-nina-33-nightly-only",
+      "version": "1.4.3.2",
+      "source": "https://github.com/astropuzzo/QualitySessionMeter/releases/tag/1.4.3.2",
+      "angle": "11 novembre : compte des poses accepté/rejeté révisé, redémarrage et références ; release auteur distincte du catalogue 1.4.3.1."
+    },
+    "perihelion-11018-framing-nina33": {
+      "issue": 2,
+      "date": "2026-11-13",
+      "status": "released-plugin-nina-32-and-33-nightly",
+      "version": "1.1.0.18",
+      "source": "https://github.com/OryxAstro/perihelion/releases/tag/v1.1.0.18",
+      "angle": "6 novembre : correctifs Frame/HIPS2FITS de la branche 3.3, essais de cadrage de l'auteur distingués du contrôle matériel."
+    },
+    "target-scheduler-51100-integrated-planning": {
+      "issue": 2,
+      "date": "2026-11-13",
+      "status": "nina-33-nightly-only",
+      "version": "5.11.0.0",
+      "source": "https://github.com/tcpalmer/nina.plugin.targetscheduler/releases/tag/v5.11.0.0",
+      "angle": "5 novembre : intégration de Target Planning, exploration sans modifier les cibles ; distinct de Scheduler Preview et de la stable 3.2."
     }
   }
 }
