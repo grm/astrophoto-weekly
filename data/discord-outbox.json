@@ -41,6 +41,11 @@
       "status": "sent",
       "message_id": "1568294162640412728",
       "channel_id": "1546851276103614514"
+    },
+    {
+      "series": "pixinsight",
+      "slug": "002",
+      "status": "pending"
     }
   ]
 }

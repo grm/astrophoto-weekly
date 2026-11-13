@@ -1,5 +1,5 @@
 {
-  "last_issue": 1,
+  "last_issue": 2,
   "topics": {
     "pixinsight-196-build1713-announcement": {
       "issue": 1,
@@ -24,6 +24,38 @@
       "version": "1.9.2",
       "source": "https://pixinsight-scripts.caelo.works/en/scripts/distributed-wbpp",
       "angle": "October 13 functional update versus October 14 docs; author validation and compatibility limits"
+    },
+    "crinconlab-polymask-beta18-signed-release": {
+      "issue": 2,
+      "date": "2026-11-13",
+      "status": "beta",
+      "version": "0.3.0-beta.18",
+      "source": "https://github.com/crinconlab/pixinsight-scripts/blob/main/repository/updates.xri",
+      "angle": "Paquet signé du 12 novembre : masques dessinés et retour de création, PI1.9.6 ; statut bêta et documentation locale distingués."
+    },
+    "rcastro-2611-cpd-proxy-release": {
+      "issue": 2,
+      "date": "2026-11-13",
+      "status": "released",
+      "version": "2.6.11",
+      "source": "https://www.rc-astro.com/version-history/",
+      "angle": "Sortie du 6 novembre désormais datée : permissions manuelles et proxy, maintenance commerciale distincte des modèles IA."
+    },
+    "distributed-wbpp-withdrawal-20261031": {
+      "issue": 2,
+      "date": "2026-11-13",
+      "status": "withdrawn",
+      "version": "all versions",
+      "source": "https://pixinsight-scripts.caelo.works/en/scripts/distributed-wbpp",
+      "angle": "Mise à jour matérielle du sujet du pilote : retrait toutes versions, arrêt clients et procédure auteur ; WBPP natif distinct."
+    },
+    "tg-subframe-quality-review-resource": {
+      "issue": 2,
+      "date": "2026-11-13",
+      "status": "documented-resource",
+      "version": "0.55.3",
+      "source": "https://norman123al.github.io/TGScripts/TGScripts_repository/doc/scripts/SubframeQualityReview/SubframeQualityReview.html",
+      "angle": "Ressource non datée : import et export WBPP, essai SNR et contrôle des originaux ; PI1.9.6/ImageAnalysis requis."
     }
   }
 }
