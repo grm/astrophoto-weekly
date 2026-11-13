@@ -52,7 +52,9 @@
     {
       "series": "nina",
       "slug": "002",
-      "status": "sending"
+      "status": "sent",
+      "message_id": "1570783311939379250",
+      "channel_id": "1570783311939379250"
     }
   ]
 }
