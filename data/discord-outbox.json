@@ -62,6 +62,16 @@
       "status": "sent",
       "message_id": "1570831188778557441",
       "channel_id": "1546851276103614514"
+    },
+    {
+      "series": "photoshop-astro",
+      "slug": "002",
+      "status": "pending"
+    },
+    {
+      "series": "siril",
+      "slug": "002",
+      "status": "pending"
     }
   ]
 }

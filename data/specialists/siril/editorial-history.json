@@ -1,5 +1,5 @@
 {
-  "last_issue": 1,
+  "last_issue": 2,
   "topics": {
     "siril-145-stacking-python-maintenance": {
       "issue": 1,
@@ -24,6 +24,30 @@
       "version": "Siril >=1.4.0",
       "source": "https://siril.org/tutorials/python_debug/",
       "angle": "Ressource non datée : attachement VSCode au processus Python et distinction sirilpy/pySiril."
+    },
+    "rcastro-2611-siril-cli-licensing": {
+      "issue": 2,
+      "date": "2026-11-20",
+      "status": "released",
+      "version": "2.6.11",
+      "source": "https://www.rc-astro.com/version-history/",
+      "angle": "Maintenance du 6 novembre : accès CLI aux licences derrière proxy, sans nouveau modèle ; intégration Siril et licences commerciales distinguées."
+    },
+    "siril-aberration-remover-120-channel-alignment": {
+      "issue": 2,
+      "date": "2026-11-20",
+      "status": "documented-source-release-day-unconfirmed",
+      "version": "1.2.0",
+      "source": "https://gitlab.com/free-astro/siril-scripts/-/blob/584765f5bc1a0c749c2fcd75d831f0666801ddbb/processing/AberrationRemover.py",
+      "angle": "Ressource sans sortie datée confirmée : alignement géométrique R/B sur G distinct de l’IA canal par canal, conditions et contrôle visuel."
+    },
+    "siril-asterion-blind-solving-reference": {
+      "issue": 2,
+      "date": "2026-11-20",
+      "status": "documented-resource",
+      "version": "Asterion 0.5.0; Siril >=1.4",
+      "source": "https://github.com/asterion-solver/asterion/blob/v0.5.0/integrations/siril/README.md",
+      "angle": "Guide d’intégration : image chargée, exécutable et catalogue séparés, ordre des lignes et automatisation ; date de la release générale distincte de celle du script."
     }
   }
 }

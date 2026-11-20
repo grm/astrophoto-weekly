@@ -1,5 +1,5 @@
 {
-  "last_issue": 1,
+  "last_issue": 2,
   "topics": {
     "rcastro-2610-photoshop-hdr-clipping": {
       "issue": 1,
@@ -24,6 +24,30 @@
       "version": null,
       "source": "https://helpx.adobe.com/camera-raw/desktop/get-started/overview-and-setup/differences-camera-raw-camera-raw.html",
       "angle": "Finition astro documentée et distinction RAW/master TIFF : Denoise absent du filtre et formats admissibles vérifiés."
+    },
+    "rcastro-2611-photoshop-licensing": {
+      "issue": 2,
+      "date": "2026-11-20",
+      "status": "released",
+      "version": "2.6.11",
+      "source": "https://www.rc-astro.com/version-history/",
+      "angle": "Sortie confirmée le 6 novembre après TBD dans le pilote : licences derrière proxy, sans nouvelle fonction de traitement ; changements PixInsight exclus."
+    },
+    "adobe-acr19-nonraw-filter-denoise": {
+      "issue": 2,
+      "date": "2026-11-20",
+      "status": "released-release-day-unconfirmed",
+      "version": "19.0",
+      "source": "https://helpx.adobe.com/camera-raw/desktop/whats-new/release-notes.html",
+      "angle": "Évolution du sujet de 001 : Denoise sur masters TIFF et dans le filtre, Amount=0 conserve la réduction chromatique, limites et prérequis ; annonce du 10 distincte de la sortie."
+    },
+    "photoshop28-astro-stack-loading-fixes": {
+      "issue": 2,
+      "date": "2026-11-20",
+      "status": "released-release-day-unconfirmed",
+      "version": "28.0",
+      "source": "https://helpx.adobe.com/photoshop/desktop/whats-new/photoshop-on-desktop-release-notes.html",
+      "angle": "Correctifs Windows non anglophone Load Files into Stack et Mac RAW avec Denoise via Bridge ; préparation astro distincte des groupes de vignettes Camera Raw."
     }
   }
 }
