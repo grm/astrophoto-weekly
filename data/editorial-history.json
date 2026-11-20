@@ -1,5 +1,5 @@
 {
-  "last_issue": 11,
+  "last_issue": 12,
   "topics": {
     "blurxterminator-ml5": {
       "issue": 1,
@@ -848,6 +848,94 @@
       "version": null,
       "source": "https://www.imo.net/calendar/",
       "angle": "Leonid meteor photography opportunities around Nov 16-18"
+    },
+    "saspro-local-normalization-drizzle-1244": {
+      "issue": 12,
+      "date": "2026-11-20",
+      "status": "released",
+      "version": "1.24.4",
+      "source": "https://github.com/setiastro/setiastrosuitepro/releases/tag/V1.24.4",
+      "angle": "Photometric local normalization and corrected weighted GPU drizzle"
+    },
+    "saspro-mosaic-master-1245": {
+      "issue": 12,
+      "date": "2026-11-20",
+      "status": "released",
+      "version": "1.24.5",
+      "source": "https://github.com/setiastro/setiastrosuitepro/releases/tag/V1.24.5",
+      "angle": "Plate-solved robotic mosaic and global panel brightness matching"
+    },
+    "saspro-exoplanet-transit-1247": {
+      "issue": 12,
+      "date": "2026-11-20",
+      "status": "released",
+      "version": "1.24.7",
+      "source": "https://github.com/setiastro/setiastrosuitepro/releases/tag/V1.24.7",
+      "angle": "Reworked differential photometry and exoplanet transit fitting"
+    },
+    "saspro-cli-sky-chart-1246": {
+      "issue": 12,
+      "date": "2026-11-20",
+      "status": "released",
+      "version": "1.24.6",
+      "source": "https://github.com/setiastro/setiastrosuitepro/releases/tag/V1.24.6",
+      "angle": "Command line image processing and vector sky chart overlay"
+    },
+    "sharpcap-darkskysites-15384": {
+      "issue": 12,
+      "date": "2026-11-20",
+      "status": "beta",
+      "version": "4.2.15384.0",
+      "source": "https://www.sharpcap.co.uk/sharpcap/sharpcap-downloads/sharpcap-4-2-beta",
+      "angle": "Direct light pollution measurement sharing"
+    },
+    "tg-astrobucketlist-planner-046": {
+      "issue": 12,
+      "date": "2026-11-20",
+      "status": "community-development",
+      "version": "0.46.0",
+      "source": "https://github.com/norman123al/TGScripts/commit/8b37a3f3c",
+      "angle": "Observing-site profiles horizon and export in PixInsight planning script"
+    },
+    "indi-ap-gtocp6-nov19": {
+      "issue": 12,
+      "date": "2026-11-20",
+      "status": "development",
+      "version": null,
+      "source": "https://github.com/indilib/indi/commit/dfeafe015",
+      "angle": "Astro-Physics GTOCP6 driver controller support"
+    },
+    "ekoslive-native-stack-nov17": {
+      "issue": 12,
+      "date": "2026-11-20",
+      "status": "development",
+      "version": null,
+      "source": "https://github.com/KDE/kstars/commit/f866f9cea",
+      "angle": "Native live-stack images forwarded to EkosLive online server"
+    },
+    "nocturne-mask-background-058": {
+      "issue": 12,
+      "date": "2026-11-20",
+      "status": "beta",
+      "version": "0.58.0",
+      "source": "https://nocturneastro.com/changelog.html",
+      "angle": "Painted or automatically generated sky masks for gradient removal"
+    },
+    "jupiter-galilean-mutual-events-2026": {
+      "issue": 12,
+      "date": "2026-11-20",
+      "status": "upcoming observing opportunity",
+      "version": null,
+      "source": "https://skyandtelescope.org/astronomy-news/watch-jupiters-moons-eclipse-and-occult-one-another/",
+      "angle": "2026-27 mutual occultations and eclipses of Galilean moons"
+    },
+    "november-2026-venus-uranus-imaging": {
+      "issue": 12,
+      "date": "2026-11-20",
+      "status": "upcoming observing opportunity",
+      "version": null,
+      "source": "https://skyandtelescope.org/astronomy-news/observing-news/this-weeks-sky-at-a-glance-november-20-29/",
+      "angle": "Venus near peak brightness and Uranus in Taurus imaging opportunities"
     }
   }
 }

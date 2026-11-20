@@ -76,6 +76,11 @@
       "status": "sent",
       "message_id": "1573341042827329618",
       "channel_id": "1573341042827329618"
+    },
+    {
+      "series": "general",
+      "slug": "012",
+      "status": "pending"
     }
   ]
 }
