@@ -1,0 +1,56 @@
+{
+  "series": "pixinsight",
+  "checked_at": "2026-11-20",
+  "candidates": [
+    {
+      "id": "pixinsight-196-build1718-projects-mosaics",
+      "title": "14 novembre 2026 — PixInsight 1.9.6 build 1718 : conserver ses projets de registration et assembler des mosaïques de résolutions différentes",
+      "source": "https://pixinsight.net/dev/index.php?articles/pixinsight-1-9-6-lockhart-build-1718-released.30/",
+      "source_date": "2026-11-14",
+      "discovered_at": "2026-11-20",
+      "kind": "actualite",
+      "status": "released",
+      "version": "1.9.6 build 1718",
+      "angle": "Réutiliser les réglages, fichiers et analyses d'alignement avec les projets AstrometricRegistration, FeatureRegistration et FFTRegistration ; composer des panneaux de résolutions différentes sans tout recommencer. La mosaïque peut avoir plusieurs nuits au compteur, son paramétrage aussi.",
+      "verification": "Annonce officielle intégrale lue par HTTP direct : le lecteur web renvoyait l'index à la place de l'article. Date absolue du balisage time : 14 novembre 2026, 16:58:29 UTC. Installation manuelle du cœur depuis la distribution licenciée ; outils natifs, pas des extensions payantes. Les résolutions de sortie fine ou grossière et le mélange des raccords sont décrits. ImageAnalysis 1.2.0, WBPP/FBPP 3.2.1 et les nouvelles documentations sont également recensés. La build 1719 du 20 novembre lui succède : recontrôler la version à conseiller avant publication. Aucun essai d'image effectué."
+    },
+    {
+      "id": "pixinsight-196-build1719-native-gpu-cfa-flats",
+      "title": "20 novembre 2026 — PixInsight 1.9.6 build 1719 : accélération GPU optionnelle et correction des statistiques des flats couleur",
+      "source": "https://pixinsight.net/dev/index.php?articles/pixinsight-1-9-6-lockhart-build-1719-released.31/",
+      "source_date": "2026-11-20",
+      "discovered_at": "2026-11-20",
+      "kind": "actualite",
+      "status": "released",
+      "version": "1.9.6 build 1719; WBPP 3.2.2",
+      "angle": "Distinguer les gains du processeur de ceux de la carte graphique ; pour les caméras couleur, WBPP 3.2.2 active les statistiques par composante de la matrice CFA lors de l'intégration des flats. Le bouton GPU n'est pas un multiplicateur magique pour toute la chaîne.",
+      "verification": "Annonce officielle intégrale lue par HTTP direct ; time datetime 2026-11-20T01:18:31+0000. GPU optionnel, opérations annoncées pour les images flottantes 32 bits : NVIDIA CUDA compute capability 5.2 minimum, pilotes Windows 527.41/Linux 525.60.13 minimum ; Metal sur Apple silicon, pas sur Mac Intel. performance -x est une commande de la console de processus PixInsight, non une commande système ; aucune exécution par la rédaction. Le benchmark WBPP 53 min 44 s → 23 min 20 s porte sur le serveur auteur 192 threads, GPU désactivé : ne pas l'attribuer au GPU ni le généraliser. Correctifs FastIntegration sur pondérations, normalisation inter-lots et décalages drizzle ; les résultats corrigés peuvent changer. ImageIntegration distingue les composantes Bayer/X-Trans pour éviter des rejets excessifs dans les flats. Installation manuelle du cœur. Aucun benchmark ni traitement réalisé ici."
+    },
+    {
+      "id": "crinconlab-polymask-101-preview-fix",
+      "title": "17 novembre 2026 — PolyMask 1.0.1 : corriger l'aperçu du flou sans modifier le calcul final du masque",
+      "source": "https://github.com/crinconlab/pixinsight-scripts/blob/main/repository/updates.xri",
+      "source_date": "2026-11-17",
+      "discovered_at": "2026-11-20",
+      "kind": "actualite",
+      "status": "released-third-party-script",
+      "version": "PolyMask 1.0.1; package 2026.11.17",
+      "angle": "Éviter un aperçu trompeur lorsque le flou final passe par de très petites valeurs. C'est une évolution distincte de la bêta 18 présentée dans le numéro 002 ; le calcul du masque complet reste inchangé.",
+      "verification": "README, index signé updates.xri (releaseDate=20261117), documentation du script et docs/releases/2026.11.17/SIGNING_STATUS.md lus dans le dépôt original crinconlab/pixinsight-scripts. Paquet pour PixInsight 1.9.6, PolyMask désormais numéroté 1.0.1. L'auteur décrit aussi le remplissage par colonnes et le bord fin de 1.0.0 ; son gain de vitesse annoncé n'est pas un test de la rédaction. La vérification auteur constate signatures valides et téléchargement, mais précise que l'installation prévue à la fermeture n'a pas été observée jusqu'à son terme. Ne pas écrire qu'une installation complète a été validée. Aucun test logiciel effectué."
+    },
+    {
+      "id": "tg-astro-bucket-list-planning-resource",
+      "title": "Ressource non datée — AstroBucketList 0.46.0 : calculer une nuit d'observation avec son horizon et exporter le programme",
+      "source": "https://norman123al.github.io/TGScripts/TGScripts_repository/doc/scripts/AstroBucketList/AstroBucketList.html",
+      "source_date": null,
+      "discovered_at": "2026-11-06",
+      "kind": "ressource-a-decouvrir",
+      "status": "documented-resource",
+      "version": "0.46.0",
+      "angle": "Séparer le classement mensuel par constellation du panneau Plan observing night, qui calcule des fenêtres avec site, horizon, Soleil et Lune. Les exports CSV/PDF aident à préparer la soirée ; ils ne pilotent pas la monture.",
+      "verification": "Candidat du 6 novembre réexaminé, identité conservée ; jamais publié. Catalogue TGScripts actuel et guide 0.46.0 lus via son lien : un accès initial au guide renvoyait encore la 0.34.1. Minimum actuel PixInsight 1.9.6 build 1718, moteur V8, SkyChartGenerator et AnnotateImage ; l'ancienne exigence 1.9.5 n'est plus valable. Le 16 novembre affiché par le catalogue est une date de commit, pas une sortie confirmée : source_date reste null. Profils de site, horizon personnalisé, limites Soleil/Lune, exports et données d'éphémérides locales documentés. Échantillonnage de deux minutes et interpolation : fenêtres très étroites approximatives ; pas de météo, limites mécaniques ou modèle de luminosité lunaire. Aucun test réalisé."
+    }
+  ],
+  "decision": "off-week",
+  "coverage_notes": "Passe PixInsight indépendante achevée avant la recherche N.I.N.A. : éditions publiées 001/002, leurs soumissions, historique de cette série et veille du 6 novembre inspectés. Date Paris 20 novembre 2026 : ancrage 30 octobre, dernier créneau 13 novembre, premier jour hors fenêtre de sept jours ; prochain créneau 27 novembre. Index et deux annonces officielles actuelles lus intégralement, dates absolues vérifiées dans le HTML ; le problème de lecture des URL d'articles par le moteur web a été contourné par HTTP direct. WBPP/FBPP et ImageAnalysis contrôlés à travers ces annonces. RC Astro https://www.rc-astro.com/version-history/ reste à 2.6.11 du 6 novembre, déjà couverte : aucune nouveauté répétée. Dépôt C_Rinconlab, README, index de mise à jour, guide et compte rendu de signature du 17 novembre lus. TGScripts : catalogue, guide AstroBucketList actuel, LRGB Deconvolution Match 1.14.3 (ressource sans sortie datée confirmée, PixInsight 1.9.5 et BlurXTerminator licencié requis, images linéaires déjà alignées ; non retenu pour remplir une sélection), SubframeQualityReview 0.55.3 inchangé et déjà couvert. CaeloWorks : index général des scripts non accessible, page Distributed WBPP accessible et retrait du 31 octobre inchangé, déjà couvert. Aucun Discord privé ni vidéo inaccessible consulté, aucune installation ou mesure sur image effectuée. Cette veille ne déclenche ni soumission, ni déploiement, ni Discord ; elle ne modifie aucun contenu ou historique généraliste."
+}
