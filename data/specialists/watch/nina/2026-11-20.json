@@ -1,0 +1,104 @@
+{
+  "series": "nina",
+  "checked_at": "2026-11-20",
+  "candidates": [
+    {
+      "id": "astro-pm-1800-per-filter-dithering",
+      "title": "19 novembre 2026 — Astro PM 1.8.0.0 : choisir la cadence de dithering filtre par filtre",
+      "source": "https://github.com/Josh-Jones-76/AstroPM.NINA.Plugin/releases/tag/1.8.0.0",
+      "source_date": "2026-11-19",
+      "discovered_at": "2026-11-20",
+      "kind": "actualite",
+      "status": "released-plugin-commercial-companion",
+      "version": "1.8.0.0",
+      "angle": "Adapter les petits décalages entre poses à chaque filtre : Default, Off ou toutes les N poses. Activer Individual filters override dans le simulateur ; les lignes Default suivent le réglage global. Les observations de transits d'exoplanètes restent sans dithering.",
+      "verification": "Release originale GitHub du 19 novembre, README au tag 1.8.0.0, manifeste officiel et page d'intégration https://astro-pm.com/nina-sync/ lus. Sortie coordonnée avec Astro PM desktop 1.8.0.0 ; les choix par filtre se règlent dans cette application. Minimum déclaré 3.0.0.9001, conservé tel quel. Plugin AGPL-3.0 distinct de l'application commerciale Astro PM : licence et compte Astro PM nécessaires. Le README reste centré sur l'ancienne synchronisation de cadrage ; les nouvelles fonctions de dithering sont attestées par la release, pas extrapolées de ce README. Aucun essai de séquence effectué."
+    },
+    {
+      "id": "astraeus-111320-external-frame-dashboard",
+      "title": "17 novembre 2026 — Astraeus 1.1.1.320 : retrouver au tableau de bord les poses de Target Scheduler et des séquences N.I.N.A.",
+      "source": "https://github.com/CosmicVaults/AstraeusPlugin/releases/tag/1.1.1.320",
+      "source_date": "2026-11-17",
+      "discovered_at": "2026-11-20",
+      "kind": "actualite",
+      "status": "released-plugin",
+      "version": "1.1.1.320",
+      "angle": "Le tableau de bord ne reste plus sur No captures yet lorsque l'acquisition est faite hors d'Astraeus. Aperçus envoyés pendant son ouverture ; avec Upload to Cloud activé, les LIGHT et instantanés sauvegardés rejoignent aussi la bibliothèque. Les images de calibration sauvegardées par N.I.N.A. restent locales.",
+      "verification": "Release originale publiée le 17 novembre à 03:24 UTC, README au tag et manifeste officiel lus. Windows x64, N.I.N.A. 3.2.0.9001 minimum, compte Cosmic Vaults requis. La sortie de bêta 1.1.0.312 date du 9 novembre, distincte du correctif du 17. Le README précise que l'envoi cloud est activé par défaut et revu dans l'assistant web ; statistiques/aperçus et fichiers complets sont à distinguer. Les aperçus des poses Autopilot ne sont plus envoyés en l'absence de spectateur. Aucun compte connecté, fichier téléversé ou test matériel effectué."
+    },
+    {
+      "id": "touch-n-stars-1630-continuum-atlas",
+      "title": "17 novembre 2026 — Touch 'N' Stars 1.6.3.0 : ajouter le fond de ciel NSNS en continuum à l'atlas",
+      "source": "https://github.com/Touch-N-Stars/N.I.N.A-Plugin-for-Touch-N-Stars/releases/tag/1.6.3.0",
+      "source_date": "2026-11-17",
+      "discovered_at": "2026-11-20",
+      "kind": "actualite",
+      "status": "released-plugin-beta-warning-in-readme",
+      "version": "1.6.3.0",
+      "angle": "Préparer le cadrage depuis l'interface tactile avec le relevé NSNS DR0.2 RGB continuum, en complément des vues en raies d'émission. L'atlas peut changer de lunettes ; cela ne transforme pas les relevés en images de la nuit.",
+      "verification": "Release GitHub du 17 novembre à 19:04 UTC sans corps ; CHANGELOG.md et README_en.md au tag 1.6.3.0 lus, manifeste officiel présent. Le changelog attribue à 1.6.3.0 uniquement nsns-cont, rgb8, ordres 3–5. Les fonctions d'assistant flats côté plugin, données brutes et déplacement de séquences sont sous 1.6.2.0 sans date propre confirmée : ne pas les annoncer comme nouveautés datées du 17. Minimum du manifeste N.I.N.A. 3.1.2.9001. README : Advanced API récent, port 1888 et V2 requis ; TPPA 2.2.2.0 minimum pour cette fonction. La release GitHub n'est pas marquée prerelease, mais le README qualifie encore le plugin de bêta : ne pas promettre une stabilité générale. Aucun pilotage effectué."
+    },
+    {
+      "id": "target-scheduler-discord-1070-settings-reload",
+      "title": "16 novembre 2026 — Target Scheduler Discord 1.0.7.0 : réparer l'envoi en séquence lorsque le bouton de test fonctionne",
+      "source": "https://github.com/grm/nina.plugin.target-scheduler-discord/releases/tag/v1.0.7.0",
+      "source_date": "2026-11-16",
+      "discovered_at": "2026-11-20",
+      "kind": "actualite",
+      "status": "released-plugin",
+      "version": "1.0.7.0",
+      "angle": "Corriger le décalage entre paramètres des options et de l'instruction du séquenceur : l'envoi recharge les réglages sauvegardés. Les instructions existantes et clonées suivent le changement de destination et d'URL d'API sans devoir être recréées. Le bouton de test n'a plus le monopole des bonnes nouvelles.",
+      "verification": "Date de publication de la release originale : 16 novembre 2026, 17:49 UTC ; corps vide, CHANGELOG.md et README lus au tag v1.0.7.0. Manifeste officiel incorporé le 17 novembre : date d'entrée au catalogue distincte de la sortie. N.I.N.A. 3.2.0.9001 minimum, Target Scheduler et son API REST activée, destination Discord configurée par l'utilisateur. Le README contient encore une mention de dépôt privé/acceptation future : elle n'annule pas la présence effectivement lue dans le catalogue. Tests de régression annoncés par l'auteur seulement. Aucun webhook lu, aucune valeur divulguée, aucun message envoyé ni test effectué."
+    },
+    {
+      "id": "nightsage-020-release-channel",
+      "title": "15 novembre 2026 — NightSage 0.2.0 : passer du canal bêta au canal Release pour préparer cibles et mosaïques",
+      "source": "https://github.com/grm/nina.plugin.nightsage/releases/tag/v0.2.0",
+      "source_date": "2026-11-15",
+      "discovered_at": "2026-11-20",
+      "kind": "actualite",
+      "status": "author-stable-plugin",
+      "version": "0.2.0 / 0.2.0.6",
+      "angle": "Rendre l'assistant de préparation disponible dans le canal ordinaire : découverte de cibles, cadrage natif et création de projets. Le changement récent concerne le statut et le paquet ; les fonctions de planification et garde-fous datés de septembre ne sont pas des nouveautés de novembre.",
+      "verification": "Release originale du 15 novembre à 00:22 UTC et README au tag v0.2.0 lus ; publication non prerelease, manifeste officiel Release 0.2.0.6 présent, incorporé le 17. N.I.N.A. 3.2.0.9001 minimum, Windows x64. L'auteur recommande Preview et une revue des plans ; un modèle de langage peut se tromper. Création de projet documentée pour Target Scheduler 5.9.x/5.10.x, pas de validation explicite de 5.11 extrapolée. Fournisseur d'IA nécessaire, éventuels frais d'API séparés et contexte du profil envoyé aux fournisseurs cloud ; résolution des noms par CDS Sesame. Le README au tag parle encore d'installation manuelle avant acceptation : le catalogue actuel prouve désormais son intégration. Aucun modèle interrogé ni projet ou séquence créé. Statut stable du plugin selon l'auteur, sans requalifier N.I.N.A. nightly."
+    },
+    {
+      "id": "asterion-050-in-process-nina-solver",
+      "title": "11 novembre 2026 — Asterion 0.5.0 : résoudre les images directement en mémoire dans N.I.N.A. 3.3 nightly",
+      "source": "https://github.com/asterion-solver/asterion/releases/tag/v0.5.0",
+      "source_date": "2026-11-11",
+      "discovered_at": "2026-11-20",
+      "kind": "actualite",
+      "status": "released-plugin-nina-33-nightly-only",
+      "version": "0.5.0 / plugin 0.5.0.0",
+      "angle": "Éviter le lancement d'un exécutable et le fichier intermédiaire à chaque résolution astrométrique, c'est-à-dire retrouver la position et l'orientation du champ. Choisir la densité du catalogue Gaia depuis les réglages. Intérêt pour les testeurs déjà sous 3.3, sans inciter à quitter une stable pour cette seule fonction.",
+      "verification": "Release originale du 11 novembre à 21:42 UTC, README et integrations/nina/README.md au tag v0.5.0, manifeste officiel lus. API des solveurs minimum N.I.N.A. 3.3.0.1069, nightly ; Windows x64. Bibliothèque native incluse, catalogue d'étoiles à télécharger séparément. Catalogue personnalisé : construction potentiellement longue, estimations RAM/disque, à préparer hors acquisition. La bibliothèque tourne dans N.I.N.A. : une faute native peut arrêter l'application entière ; les catalogues restent ouverts entre résolutions. Le mode CLI compatible ASTAP est une autre intégration, d'émulation best effort : ne pas confondre avec le plugin. Vitesses et précisions du README sont des mesures de l'auteur sur son jeu et sa machine ; aucun benchmark ni résolution réalisé ici."
+    },
+    {
+      "id": "guiding-analyzer-1005-active-log-corrections",
+      "title": "10 novembre 2026 — GuidingAnalyzer 1.0.0.5 : lire le journal PHD2 en cours et réduire les faux diagnostics",
+      "source": "https://github.com/jphf007/GuidingAnalyzer/releases/tag/v1.0.0.5",
+      "source_date": "2026-11-10",
+      "discovered_at": "2026-11-20",
+      "kind": "actualite",
+      "status": "released-plugin",
+      "version": "1.0.0.5",
+      "angle": "Analyser le guidage sans attendre la fermeture du journal ; corriger les angles de calibration, comparaisons de spectres et détection de retournement au méridien. Réduire les alertes erronées de jeu mécanique ou surcorrection, sans transformer un diagnostic logiciel en verdict sur la monture.",
+      "verification": "Release originale du 10 novembre à 17:49 UTC, README et Docs/Release-1.0.0.5.md au tag, manifeste officiel lus. N.I.N.A. 3.2.0.9001 minimum. Les lignes finales incomplètes des journaux actifs sont ignorées ; crash de partage des graphes dans Imaging corrigé, calculs RMS et exports améliorés. Catalogue intégré le 15 novembre, date différente de la release du 10. Les 36 tests et le journal de 16 sessions cités dans l'ancienne 1.0.0.4 ne sont ni des essais de cette rédaction ni une validation universelle de 1.0.0.5. Aucun journal utilisateur analysé, test logiciel ou diagnostic de matériel effectué."
+    },
+    {
+      "id": "two-point-polar-1550-mechanical-ra-rotation",
+      "title": "8 novembre 2026 — 2-Point Polar Alignment 1.5.5.0 : faire tourner l'axe d'ascension droite sans déplacer inutilement la déclinaison",
+      "source": "https://github.com/nirzons/TwoPointPolarAlignment/releases/tag/v1.5.5.0",
+      "source_date": "2026-11-08",
+      "discovered_at": "2026-11-20",
+      "kind": "actualite",
+      "status": "released-plugin",
+      "version": "1.5.5.0",
+      "angle": "Améliorer la mesure de mise en station en privilégiant la rotation mécanique de l'axe d'ascension droite plutôt qu'un pointage en coordonnées célestes. Corriger la latitude de référence et restaurer le suivi après la procédure, sauf demande explicite de retour Home.",
+      "verification": "Release originale du 8 novembre à 19:18 UTC, sans corps ; CHANGELOG.md au tag v1.5.5.0 lu et manifeste officiel minimum N.I.N.A. 3.1.0.0 vérifié. Le titre de changelog ne donne pas de date ; celle retenue est la publication de release, pas l'incorporation au catalogue du 9 novembre. MoveAxis si disponible, repli GoTo si axe primaire non pris en charge ou pilote ne déplaçant pas la monture ; latitude des paramètres Astrometry prioritaire, avertissement d'écart >0,1 degré avec le pilote, garde contre mode AltAz, respect du temps de stabilisation. Approche lente finale et diagnostics de rotation décrits par l'auteur. Aucune validation sur monture, mise en station ni mesure de précision effectuée. Au prochain créneau, ce sujet sera un rattrapage ancien, pas une actualité des quatorze jours."
+    }
+  ],
+  "decision": "off-week",
+  "coverage_notes": "Passe ciblée N.I.N.A. complète, indépendante et effectuée après la passe PixInsight. Éditions réelles 001/002, historique propre, veille du 6 novembre et soumissions 001/002 inspectés ; aucun sujet déjà publié repris sans changement. Au 20 novembre 2026 à Paris : dernier créneau 13 novembre (ancrage 30 octobre), semaine hors fenêtre ; prochain créneau 27 novembre. Cœur : page https://nighttime-imaging.eu/download/ et trois changelogs effectivement relus, versions toujours 3.2 stable (3.2.0.9001), 3.2 HF1 RC2 (3.2.1.3002) candidate et 3.3 nightly #69 (3.3.0.1069) ; dates d'événements absentes, aucun nouveau lancement daté inventé à partir du contenu ou des dates de consultation. Plugins recherchés séparément à partir du catalogue officiel complet et de ses changements depuis le 6 novembre, puis releases et documentation originales. Target Scheduler : releases et notes https://tcpalmer.github.io/nina-scheduler/release.html toujours 5.11.0.0 du 5 novembre, déjà couvert ; branche 3.2 5.9.6.1 du 25 octobre, candidat ancien recontrôlé et non promu en nouveauté. Hocus Focus : release originale 4.0.0.21 du 16 octobre sans corps, manifeste et documentation/Quick Start lus, minimum 3.2.0.2001 ; guide autofocus/relecture déjà couvert et aucune fonction récente datée démontrée. Chemin quickstart inaccessible, lien correct quick-start accessible. QualitySessionMeter : release 1.4.3.2 du 11 novembre déjà couverte ; présence officielle désormais confirmée, commit catalogue du 15 novembre, aucun nouveau numéro de logiciel. Perihelion : 1.1.0.18 du 6 novembre inchangée et couverte ; pas de nouvel article. Chatstronomy : 0.1.0.34 du 23 octobre recontrôlée sur release originale, catalogue toujours 0.1.0.31, ancien candidat non retenu comme actualité récente. Sequencer+ : release 3.29.0.12 du 10 mai inchangée, manifeste lu ; page auteur https://elveteek.ch/nina-plugins/sequencer-plus sans texte lisible à l'ouverture, résultats de recherche non assimilés à une lecture complète. Orbuculum : release originale 2.0.0.2 du 4 juin 2025 et manifeste inchangés. Les huit nouvelles pistes ci-dessus ont été remontées jusqu'aux sources originales, dates de release distinguées des commits d'admission au catalogue ; aucune version nightly recommandée comme stable de production. Recherche de tutoriels et retours techniques effectuée : guide auteur https://deepspaceplace.com/tutorials/nina-autofocus lu, non daté et sans version précise, non retenu comme tutoriel nouveau ; une vidéo de 2024 repérée n'a pas été visionnée ni présentée comme nouveauté. Aucun Discord privé consulté, aucune vidéo inaccessible visionnée, aucun essai de logiciel, d'image ou de matériel. Aucun déploiement, soumission ou envoi Discord pour cette veille ; aucun fichier généraliste modifié."
+}
