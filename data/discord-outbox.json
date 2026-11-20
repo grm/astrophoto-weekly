@@ -80,7 +80,9 @@
     {
       "series": "general",
       "slug": "012",
-      "status": "sending"
+      "status": "sent",
+      "message_id": "1573369174913327284",
+      "channel_id": "1546851276103614514"
     }
   ]
 }
